@@ -1,30 +1,30 @@
-[submodule "wiki/trafkverse/Sourcehop-Notes"]
-	path = wiki/trafkverse/Sourcehop-Notes
-	url = git@github.com:Trafkhop-Entertainment/Sourcehop-Notes
-[submodule "wiki/assets/Sourcehop-GodotScenes"]
-	path = wiki/assets/Sourcehop-GodotScenes
-	url = git@github.com:Trafkhop-Entertainment/Sourcehop-GodotScenes
-[submodule "wiki/assets/Sourcehop-Shaders"]
-	path = wiki/assets/Sourcehop-Shaders
-	url = git@github.com:Trafkhop-Entertainment/Sourcehop-Shaders
-[submodule "wiki/assets/Sourcehop-Images"]
-	path = wiki/assets/Sourcehop-Images
-	url = git@github.com:Trafkhop-Entertainment/Sourcehop-Images
-[submodule "wiki/assets/Sourcehop-Audios"]
-	path = wiki/assets/Sourcehop-Audios
-	url = git@github.com:Trafkhop-Entertainment/Sourcehop-Audios
-[submodule "wiki/assets/Sourcehop-Models"]
-	path = wiki/assets/Sourcehop-Models
-	url = git@github.com:Trafkhop-Entertainment/Sourcehop-Models
-[submodule "wiki/assets/Sourcehop-Documents"]
-	path = wiki/assets/Sourcehop-Documents
-	url = git@github.com:Trafkhop-Entertainment/Sourcehop-Documents.git
+[submodule "wiki/trafkverse/SourceHop-Notes"]
+	path = wiki/trafkverse/SourceHop-Notes
+	url = git@github.com:TrafkHop-Entertainment/SourceHop-Notes
+[submodule "wiki/assets/SourceHop-GodotScenes"]
+	path = wiki/assets/SourceHop-GodotScenes
+	url = git@github.com:TrafkHop-Entertainment/SourceHop-GodotScenes
+[submodule "wiki/assets/SourceHop-Shaders"]
+	path = wiki/assets/SourceHop-Shaders
+	url = git@github.com:TrafkHop-Entertainment/SourceHop-Shaders
+[submodule "wiki/assets/SourceHop-Images"]
+	path = wiki/assets/SourceHop-Images
+	url = git@github.com:TrafkHop-Entertainment/SourceHop-Images
+[submodule "wiki/assets/SourceHop-Audios"]
+	path = wiki/assets/SourceHop-Audios
+	url = git@github.com:TrafkHop-Entertainment/SourceHop-Audios
+[submodule "wiki/assets/SourceHop-Models"]
+	path = wiki/assets/SourceHop-Models
+	url = git@github.com:TrafkHop-Entertainment/SourceHop-Models
+[submodule "wiki/assets/SourceHop-Documents"]
+	path = wiki/assets/SourceHop-Documents
+	url = git@github.com:TrafkHop-Entertainment/SourceHop-Documents.git
 [submodule "fragAlfonz/AlfonzProxy"]
 	path = fragAlfonz/AlfonzProxy
-	url = git@hf.co:spaces/Trafkhop/AlfonzProxy
-[submodule "projects/Trafk-OS/Trafk-OS"]
-	path = projects/Trafk-OS/Trafk-OS
-	url = git@github.com:Trafkhop-Entertainment/Trafk-OS.git
+	url = git@hf.co:spaces/TrafkHop-Entertainment/AlfonzProxy
+[submodule "projects/TrafkTux/TrafkTux"]
+	path = projects/TrafkTux/TrafkTux
+	url = git@github.com:TrafkHop-Entertainment/TrafkTux.git
 [submodule "projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive"]
 	path = projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive
-	url = git@github.com:Trafkhop-Entertainment/Raufbold3bs-Scratch-Archive.git
+	url = git@github.com:TrafkHop-Entertainment/Raufbold3bs-Scratch-Archive.git
