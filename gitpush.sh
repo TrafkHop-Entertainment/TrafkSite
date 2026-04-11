@@ -13,7 +13,7 @@ fi
 
 export commit_msg
 
-git submodule foreach '
+git submodule foreach --recursive '
   git checkout main || git checkout master;
   git add .;
   if ! git diff-index --quiet HEAD; then
