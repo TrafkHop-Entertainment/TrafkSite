@@ -12,6 +12,52 @@ header a:has(.mainlogo):hover + p {
     opacity: 1;
 
 }
+#NewestProjects {
+    left: 3%;
+    right: 45%;
+    top: 12%;
+    bottom: 35%;
+}
+#NewestProjects img {
+    max-width: 43%;
+    padding: 15px;
+}
+#NewestProjects iframe {
+    max-width: 43%;
+    padding: 15px;
+}
+#community {
+    left: 65%;
+    right: 3%;
+    top: 12%;
+    bottom: 35%;
+}
+#community img {
+    max-width: 43%;
+    padding: 15px;
+}
+#newerNews {
+    left: 3%;
+    right: 33%;
+    top: 115%;
+    bottom: -40%;
+}
+#ourWiki {
+    left: 5%;
+    right: 5%;
+    top: 65%;
+    bottom: -15%;
+}
+#askAlfonz {
+    left: 33%;
+    right: 3%;
+    top: 140%;
+    bottom: -65%;
+}
+
+#spacer {
+    bottom: -78%;
+}
 
 @media (max-width: 1000px) {
     header p {

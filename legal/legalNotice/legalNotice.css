@@ -1,0 +1,27 @@
+* {
+text-align: center;
+}
+
+#impressum {
+    top: 12%;
+    left: 3%;
+    right: 3%;
+    bottom: 21%;
+}
+
+#medienrecht{
+    top: 78%;
+    left: 3%;
+    right: 3%;
+    bottom: -10%;
+}
+#haftung{
+    top: 108%;
+    left: 3%;
+    right: 3%;
+    bottom: -48%;
+}
+
+#spacer {
+    bottom: -61%;
+}

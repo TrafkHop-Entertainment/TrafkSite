@@ -1,0 +1,40 @@
+#Website {
+    left: 3%;
+    right: 65%;
+    top: 12%;
+    bottom: 45%;
+}
+
+#Itch-io {
+    left: 35%;
+    right: 30%;
+    top: 12%;
+    bottom: 45%;
+}
+
+#YouTube {
+    left: 70%;
+    right: 3%;
+    top: 12%;
+    bottom: 45%;
+}
+
+#Discord {
+    left: 8%;
+    right: 50%;
+    top: 55%;
+    bottom: 5%;
+}
+
+#Github {
+    left: 50%;
+    right: 8%;
+    top: 55%;
+    bottom: 5%;
+}
+
+
+
+#spacer {
+    bottom: -10%;
+}

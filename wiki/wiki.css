@@ -1,0 +1,63 @@
+#trafkverse{
+    top: 12%;
+    left: 3%;
+    right: 45%;
+    bottom: 35%;
+}
+#assets {
+    top: 12%;
+    left: 55%;
+    right: 15%;
+    bottom: 35%;
+}
+#news {
+    top: 12%;
+    left: 85%;
+    right: 3%;
+    bottom: 35%;
+}
+#trafkhop {
+    top: 65%;
+    left: 3%;
+    right: 35%;
+    bottom: -15%;
+}
+#tetrabox {
+    top: 65%;
+    left: 65%;
+    right: 3%;
+    bottom: -5%;
+}
+#projects {
+    top: 115%;
+    left: 3%;
+    right: 25%;
+    bottom: -65%;
+}
+#links {
+    top: 105%;
+    left: 75%;
+    right: 3%;
+    bottom: -65%;
+}
+#oldWikiStuff {
+    top: 101%;
+    left: 63%;
+    right: 23%;
+    bottom: -19%;
+}
+#oldWikiStuff p {
+font-size: 10px;
+}
+#oldWikiStuff .header h2 {
+font-size: 12px;
+}
+#oldWikiStuff .header {
+padding: 5px;
+margin-top: -18px;
+margin-bottom: 0;
+}
+
+#spacer {
+    bottom: -78%;
+}

@@ -1,0 +1,13 @@
+main {
+}
+section {
+display: flex;
+position: relative;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+max-width: 41%;
+}
+.header {
+width: 100%;
+}
