@@ -7,7 +7,8 @@ let chatWindow, inputField, sendBtn, quickActions;
 // KONFIGURATION & GLOBALE VARIABLEN
 // ================================
 const PROXY_URL = "https://trafkhop-alfonzproxy.hf.space/chat";
-const BASE_URL = "https://trafkhop-entertainment.github.io/Trafk-Center/";
+const BASE_URL = "https://trafkhop-entertainment.github.io/TrafkSite/";
+const BASE_URL2 = "https://trafkhop-entertainment.github.io/SourceHop-Notes/";
 let chatHistory = [];
 let sitemapUrls = [];
 let searchIndex = [];
@@ -98,22 +99,38 @@ async function fetchFileContent(url) {
 }
 
 async function loadSitemap() {
-    const pathsToTest = ['/Trafk-Center/sitemap.xml', './sitemap.xml', 'sitemap.xml'];
-    for (const path of pathsToTest) {
+    // Hier definieren wir die Pfade für beide Basis-URLs
+    const sources = [
+        '/Trafk-Center/sitemap.xml',
+        './sitemap.xml',
+        'sitemap.xml',
+        BASE_URL2 + 'sitemap.xml' // Die 2. Quelle explizit hinzufügen
+    ];
+
+    for (const path of sources) {
         try {
             const response = await fetch(path);
-            if (!response.ok) continue;
+            if (!response.ok) {
+                console.warn(`Sitemap nicht gefunden unter: ${path}`);
+                continue;
+            }
             const xmlText = await response.text();
             const locMatches = xmlText.matchAll(/<loc>(.*?)<\/loc>/gi);
+
+            let count = 0;
             for (const match of locMatches) {
                 let url = match[1].trim();
+                // Filter für das Raufbold-Archiv beibehalten
                 if (!url.includes('/games/released/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive/')) {
                     sitemapUrls.push(url);
+                    count++;
                 }
             }
-            if (sitemapUrls.length > 0) return;
+            console.log(`Aus Quelle ${path} wurden ${count} URLs geladen.`);
+            // WICHTIG: Kein "return" mehr hier, damit er alle Quellen durchgeht!
+
         } catch (e) {
-            console.warn(`Fehler: ${e.message}`);
+            console.warn(`Fehler beim Laden von ${path}: ${e.message}`);
         }
     }
 }
