@@ -31,9 +31,9 @@ html {
 
 body {
     background-image: url("wiki/assets/SourceHop-Images/TrafkSite/13WorldsBG3.png");
-    background-color: transparent;
+    background-color: black;
     background-size: contain;
-    background-repeat: repeat;
+    background-repeat: repeat-y;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -166,6 +166,9 @@ header #search {
     background-color: transparent;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+}
+header #search:hover {
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tbs.png");
 }
 
 header input[type="search"]::placeholder {
