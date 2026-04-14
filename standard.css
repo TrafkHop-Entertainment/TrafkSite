@@ -39,9 +39,6 @@ body {
     height: 100%;
     margin: 0;
 }
-section {
-    display: none;
-}
 
 video, iframe, img, audio {
     border: none;
@@ -67,7 +64,7 @@ video, iframe, img, audio {
    ============================================================ */
 
 h1, h2, h3, h4, p, li, header, footer, label {
-    color: black;
+    color: white;
 }
 
 h1, h1 a { font-size: 30px; }
@@ -126,7 +123,7 @@ header {
     padding: 10px;
     display: flex;
     position: fixed;
-    top: 1%;
+    top: 0;
     left: 0;
     right: 0;
     height: 115px;
@@ -224,23 +221,25 @@ nav .nodo:hover {
 .nav {
     margin-top: 3px;
     margin-bottom: 3px;
-    border-radius: 50%;
     width: 85px;
     height: 85px;
     align-content: center;
     justify-content: center;
-    flex-shrink: 0;
     background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tb.png");
     background-color: transparent;
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
+.nav:hover {
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tbs.png");
+}
+
 .nav.nodo {
-    border-radius: 0;
     height: 35px;
     width: 65px;
     padding: 5px;
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tb.png");
 }
 
 /* Section header bar */
@@ -486,46 +485,5 @@ footer a {
 
     #volume {
         max-width: 35px;
-    }
-}
-
-
-/* ============================================================
-   DARK MODE
-   ============================================================ */
-
-html.dark-mode {
-
-    h1, h2, h3, h4, p, li, label,
-    header h1, footer {
-        color: white;
-    }
-
-
-    header #search {
-}
-
-    header input[type="search"]::placeholder {
-
-    }
-
-    section {
-        background: var(--Trafk);
-        filter: drop-shadow(0px 3px 3px var(--Trafk-dark)) drop-shadow(0px 3px 3px var(--Trafk-dark));
-    }
-
-    nav {
-        background: var(--Trafk);
-        filter: drop-shadow(3px 0px 3px var(--Trafk-dark)) drop-shadow(3px 0px 3px var(--Trafk-dark));
-    }
-
-    .header {
-        background: var(--otherTrafk);
-        filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
-    }
-
-    footer {
-        background: var(--otherTrafk);
-        filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
     }
 }
