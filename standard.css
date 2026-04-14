@@ -1,91 +1,27 @@
+/* ============================================================
+   VARIABLES
+   ============================================================ */
+
 :root {
---Kraft: #fff495;
---Kraft-dark: #cdc477;
---otherKraft: #fff7bb;
---otherKraft-dark: #ccc595;
---Trafk: #5a3998;
---Trafk-dark: #432a71;
---otherTrafk: #9862ff;
---otherTrafk-dark: #8456dd;
+    --Kraft:            #fff495;
+    --Kraft-dark:       #cdc477;
+    --otherKraft:       #fff7bb;
+    --otherKraft-dark:  #ccc595;
+    --Trafk:            #5a3998;
+    --Trafk-dark:       #432a71;
+    --otherTrafk:       #9862ff;
+    --otherTrafk-dark:  #8456dd;
 }
+
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
 
 * {
     margin: 0;
     padding: 0;
     font-family: "Arial", sans-serif;
-}
-
-h1, h2, h3, h4, p, li, header, footer, label {
-color: black;
-}
-
-h1, h1 a {
-    font-size: 30px;
-}
-h2, h2 a {
-    font-size: 25px;
-}
-h3, h3 a {
-    font-size: 20px;
-}
-h4, h4 a {
-    font-size: 18px;
-}
-p, li, a, label, p a, li a, label a {
-    font-size: 15px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-li {
-    list-style-position: outside;
-    margin-left: 35px;
-}
-.nav a.do{
-    filter: drop-shadow(0px 0px 3px var(--Kraft)) drop-shadow(0px 0px 7px var(--Kraft));
-    color: var(--Kraft);
-}
-.nav h1 {
-    color: var(--Kraft);
-}
-nav .do {
-    padding-left: 0;
-    padding-right: 0;
-}
-.nav {
-    background: var(--Trafk);
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    align-content: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-.do {
-    display: inline-flex;
-    flex-wrap: wrap;
-    filter: drop-shadow(0px 0px 2px var(--Trafk)) drop-shadow(0px 0px 5px var(--Trafk));
-    transition: scale .165s ease-in-out;
-    color: var(--Trafk);
-    padding-left: 5px;
-    padding-right: 5px;
-}
-nav .nodo:hover {
-    scale: 1 !important;
-}
-.nav a.nodo {
-    color: var(--Kraft);
-}
-.do:hover {
-    cursor: pointer;
-    scale: 1.065;
-}
-.nav.nodo {
-    border-radius: 0;
-    height: 35px;
-    width: 65px;
-    padding: 5px;
 }
 
 html {
@@ -94,12 +30,66 @@ html {
 }
 
 body {
-    background: #fffdf2;
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/13WorldsBG3.png");
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: repeat;
     display: flex;
     flex-direction: column;
     height: 100%;
     margin: 0;
 }
+section {
+    display: none;
+}
+
+video, iframe, img, audio {
+    border: none;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+#spacer {
+    left: 0;
+    right: 0;
+    height: 35px;
+    opacity: 0;
+    display: flex !important;
+}
+
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+h1, h2, h3, h4, p, li, header, footer, label {
+    color: black;
+}
+
+h1, h1 a { font-size: 30px; }
+h2, h2 a { font-size: 25px; }
+h3, h3 a { font-size: 20px; }
+h4, h4 a { font-size: 18px; }
+
+p, li, a, label, p a, li a, label a {
+    font-size: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+li {
+    list-style-position: outside;
+    margin-left: 35px;
+}
+
+
+/* ============================================================
+   LAYOUT — MAIN
+   ============================================================ */
 
 main {
     display: flex;
@@ -114,27 +104,47 @@ main {
     padding-bottom: 85px;
     position: relative;
 }
+
+section {
+    position: absolute;
+    margin: 35px;
+    padding: 35px;
+    padding-bottom: 10px !important;
+    background: black;
+    filter: drop-shadow(0px 0px 8px var(--Kraft)) drop-shadow(0px 0px 8px var(--Kraft));
+    overflow: scroll;
+    scroll-behavior: smooth;
+    border-radius: 35px;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
 header {
     padding: 10px;
     display: flex;
     position: fixed;
-    top: 0;
+    top: 1%;
     left: 0;
     right: 0;
-    height: 85px;
+    height: 115px;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: var(--Kraft);
-    filter: drop-shadow(0px 3px 7px var(--otherKraft-dark)) drop-shadow(0px 3px 7px var(--Kraft-dark));
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tbh.png");
+    background-color: transparent;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     z-index: 999;
-    border-bottom-left-radius: 65px;
-    border-bottom-right-radius: 65px;
 }
+
 header .mainlogo {
     height: 65px;
     width: auto;
 }
+
 header #menuimg {
     height: 35px;
     width: auto;
@@ -145,22 +155,159 @@ header #menuimg {
     top: 35px;
     margin: 0;
 }
+
 header #search {
     position: fixed;
     right: 65px;
     border: none;
     height: 35px;
     width: 165px;
-    background: var(--otherKraft);
-    filter: drop-shadow(0px 3px 5px var(--otherKraft-dark)) drop-shadow(0px 3px 5px var(--otherKraft-dark));
-    border-radius: 35px;
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tb.png");
+    background-color: transparent;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
+
 header input[type="search"]::placeholder {
     text-align: center;
     font-size: 15px;
-    color: var(--Trafk);
     font-weight: bolder;
+    color: var(--Kraft);
 }
+
+
+/* ============================================================
+   NAVIGATION — SIDEBAR NAV
+   ============================================================ */
+
+nav {
+    top: 165px;
+    bottom: 85px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    display: flex;
+    width: 115px;
+    position: fixed;
+    left: -105px;
+    background: var(--otherKraft);
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    filter: drop-shadow(0px 0px 8px var(--Kraft));
+    gap: 2%;
+    z-index: 555;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    border-top-right-radius: 65px;
+    border-bottom-right-radius: 65px;
+    transition: left 0.085s ease-in-out;
+}
+
+nav:hover {
+    left: 0;
+}
+
+nav .do {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+nav .nodo:hover {
+    scale: 1 !important;
+}
+
+/* Nav icon bubbles */
+.nav {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+    align-content: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tb.png");
+    background-color: transparent;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.nav.nodo {
+    border-radius: 0;
+    height: 35px;
+    width: 65px;
+    padding: 5px;
+}
+
+/* Section header bar */
+.header {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -5px;
+    padding: 10px;
+    background: var(--otherTrafk);
+    filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
+    margin-bottom: 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.header .do {
+    padding: 0;
+}
+
+.date p {
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    font-size: 10px;
+}
+
+
+/* ============================================================
+   INTERACTIVE — .do GLOW EFFECT
+   ============================================================ */
+
+.do {
+    display: inline-flex;
+    flex-wrap: wrap;
+    transition: scale .165s ease-in-out;
+    filter: drop-shadow(0px 0px 2px var(--Kraft)) drop-shadow(0px 0px 5px var(--Kraft));
+    color: var(--Kraft);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.do:hover {
+    cursor: pointer;
+    scale: 1.065;
+}
+
+
+/* ============================================================
+   MENU (HEADER DROPDOWN)
+   ============================================================ */
+
+#menu {
+    position: fixed;
+    left: 65px;
+    width: 35px;
+    padding: 0;
+    margin: 0;
+}
+
+#menu:has(input:checked) ~ .menudiv {
+    display: flex;
+}
+
+.menudiv {
+    display: none;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+}
+
 .menu {
     width: 35px;
     height: 35px;
@@ -171,59 +318,33 @@ header input[type="search"]::placeholder {
     align-content: center;
     justify-content: center;
 }
-.menu a.do, .menu a {
-    font-size: 12px;
-    filter: drop-shadow(0px 0px 3px var(--Kraft)) drop-shadow(0px 0px 7px var(--Kraft));
-    color: var(--Kraft);
-}
-#menu {
-    position: fixed;
-    left: 65px;
-    width: 35px;
-    padding: 0;
-    margin: 0;
-}
-#menu:has(input:checked) ~ .menudiv {
-    display: flex;
-}
-.menudiv{
-    display: none;
-    position: fixed;
-    padding: 0;
-    margin: 0;
 
-}
-#Profile {
-    left: 135px;
-}
-#Settings {
-    left: 205px;
-}
-#Tools {
-    left: 275px;
-}
-#darkmode-wrapper {
-    left: 345px;
-}
-#darkmode-wrapper label {
-    left: 285px;
+.menu a.do,
+.menu a {
     font-size: 12px;
     filter: drop-shadow(0px 0px 3px var(--Kraft)) drop-shadow(0px 0px 7px var(--Kraft));
     color: var(--Kraft);
-    user-select: none;
 }
+
 .hidden-checkbox {
     position: fixed;
     opacity: 0;
     height: 0;
     width: 0;
 }
-#wikih {
-    right: 335px;
-}
-#chatbot {
-    right: 265px;
-}
+
+/* Menu item positions */
+#Tools          { left: 135px; }
+
+/* Header utility buttons */
+#wikih   { right: 335px; }
+#chatbot { right: 265px; }
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
 footer {
     justify-content: center;
     padding: 0;
@@ -232,226 +353,157 @@ footer {
     right: 0;
     bottom: 0;
     height: 65px;
-    background: var(--Kraft);
-    filter: drop-shadow(0px -3px 7px var(--otherKraft-dark)) drop-shadow(0px -3px 7px var(--Kraft-dark));
+    background: var(--otherTrafk);
+    filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
     flex-shrink: 0;
     z-index: 999;
     border-top-left-radius: 65px;
     border-top-right-radius: 65px;
     position: fixed;
 }
-#rights {
-    position: absolute;
-    right: 30%;
-    bottom: 25px;
-}
-#contact {
-    position: absolute;
-    bottom: 10px;
-    left: 45px;
-}
-#license {
-    position: absolute;
-    bottom: 10px;
-    left: 135px;
-}
-#legalnotice {
-    position: absolute;
-    bottom: 10px;
-    left: 220px;
-}
-#privacyPolicy {
-    position: absolute;
-    bottom: 10px;
-    left: 305px;
-}
-#volume {
-    position: absolute;
-    bottom: 23px;
-    right: 45px;
-}
-section {
-    position: absolute;
-    margin: 35px;
-    padding: 35px;
-    padding-bottom: 10px !important;
-    background: var(--otherKraft);
-    filter: drop-shadow(0px 3px 3px var(--otherKraft-dark)) drop-shadow(0px 3px 3px var(--otherKraft-dark));
-    overflow: scroll;
-    scroll-behavior: smooth;
-    border-radius: 35px;
-}
-nav {
-    top: 105px;
-    bottom: 65px;
-    padding-top: 35px;
-    padding-bottom: 35px;
-    display: flex;
-    width: 85px;
-    position: fixed;
-    left: -75px;
-    background: var(--otherKraft);
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    filter: drop-shadow(0px 3px 7px var(--otherKraft-dark)) drop-shadow(0px 3px 7px var(--otherKraft-dark));
-    gap: 2%;
-    z-index: 555;
-    overflow: scroll;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    border-top-right-radius: 65px;
-    border-bottom-right-radius: 65px;
-    transition: left 0.085s ease-in-out;
-}
-nav:hover {
-    left: 0;
-}
-.header {
-    margin-left: -15px;
-    margin-right: -15px;
-    margin-top: -5px;
-    padding: 10px;
-    background: var(--Kraft);
-    filter: drop-shadow(0px 3px 3px var(--Kraft-dark)) drop-shadow(0px 3px 3px var(--Kraft-dark));
-    margin-bottom: 15px;
-    border-radius: 15px;
-    text-align: center;
-}
-.header .do {
-    padding: 0;
-}
-.date p {
-    position:absolute;
-    top: -5px;
-    right: 5px;
-    font-size: 10px;
-}
 
-video, iframe, img, audio {
-    border: none;
-    max-width: 100%;
-    max-height: 100%;
-}
-.hidden {
-    display: none;
-}
 footer .nav {
     max-width: 35px;
     max-height: 35px;
 }
+
 footer a {
     font-size: 12px;
 }
-#spacer {
-    left: 0;
-    right: 0;
-    height: 35px;
-    opacity: 0;
-}
+
+/* Footer link positions */
+#rights       { position: absolute; right: 30%;   bottom: 25px; }
+#contact      { position: absolute; bottom: 10px; left: 45px; }
+#license      { position: absolute; bottom: 10px; left: 135px; }
+#legalnotice  { position: absolute; bottom: 10px; left: 220px; }
+#privacyPolicy { position: absolute; bottom: 10px; left: 305px; }
+#volume       { position: absolute; bottom: 23px; right: 45px; }
+
+
+/* ============================================================
+   RESPONSIVE — max-width: 1080px
+   ============================================================ */
 
 @media (max-width: 1080px) {
-    section {
-        margin: 15px;
-        padding: 15px;
+
+    /* Typography */
+    h1, h1 a { font-size: 25px; }
+    h2, h2 a { font-size: 23px; }
+    h3, h3 a { font-size: 18px; }
+    h4, h4 a { font-size: 15px; }
+
+    p, li, a, label {
+        font-size: 10px;
     }
+
+    li {
+        margin-left: 21px;
+    }
+
+    /* Layout */
     main {
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    h1, h1 a {
-        font-size: 25px;
+
+    section {
+        margin: 15px;
+        padding: 15px;
     }
-    h2, h2 a {
-        font-size: 23px;
+
+    .header {
+        margin: 5px;
     }
-    h3, h3 a {
-        font-size: 18px;
-    }
-    h4, h4 a {
-        font-size: 15px;
-    }
-    p, li, a, label {
-        font-size: 10px;
-    }
-    li {
-        margin-left: 21px;
-    }
-    footer {
-        gap: 2%;
-        height: 45px;
-    }
+
     .date p {
         top: 65%;
         font-size: 8px;
         font-weight: bold;
     }
+
+    /* Header */
     header {
         height: 45px;
     }
+
     header .mainlogo {
         height: 35px;
         padding: 0;
     }
+
     header #search {
         height: 25px;
         width: 135px;
         right: 35px;
     }
+
     header input[type="search"]::placeholder {
-    font-size: 8px;
+        font-size: 8px;
     }
-    .header {
-        margin: 5px;
-    }
-    #search {
-        max-width: 35px;
-    }
+
     header #menuimg {
         max-height: 25px;
         left: 35px;
         top: 20px;
     }
-    #volume {
-        max-width: 35px;
+
+    header #chatbot,
+    header #wikih {
+        min-width: 15px;
+        min-height: 15px;
+        max-width: 15px;
+        max-height: 15px;
+        right: 80px;
     }
+
+    header #chatbot a {
+        font-size: 7px;
+    }
+
+    /* Footer */
     footer {
-    height: 65px;
-    gap: 0 !important;
+        gap: 2%;
+        height: 45px;
     }
+
+    footer {
+        height: 65px;
+        gap: 0 !important;
+    }
+
     footer h4 {
         font-size: 6px;
     }
-    header #chatbot, header #wikih {
-    min-width: 15px;
-    min-height: 15px;
-    max-width: 15px;
-    max-height: 15px;
-    right: 80px;
+
+    /* Misc */
+    #search {
+        max-width: 35px;
+    }
+
+    #volume {
+        max-width: 35px;
+    }
 }
-header #chatbot a {
-    font-size: 7px;
-}
-}
+
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
 
 html.dark-mode {
-    body {
-        background: #1b112e;
-    }
 
-    .do {
-        filter: drop-shadow(0px 0px 2px var(--Kraft)) drop-shadow(0px 0px 5px var(--Kraft));
-        color: var(--Kraft);
-    }
-
-    header h1, footer, h1, h2, h3, h4, p, li, label {
+    h1, h2, h3, h4, p, li, label,
+    header h1, footer {
         color: white;
     }
 
-    header {
-        background: var(--otherTrafk);
-        filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
+
+    header #search {
+}
+
+    header input[type="search"]::placeholder {
+
     }
 
     section {
@@ -463,20 +515,14 @@ html.dark-mode {
         background: var(--Trafk);
         filter: drop-shadow(3px 0px 3px var(--Trafk-dark)) drop-shadow(3px 0px 3px var(--Trafk-dark));
     }
-    footer {
-        background: var(--otherTrafk);
-        filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
-    }
 
     .header {
         background: var(--otherTrafk);
         filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
     }
-    header #search {
-        background: var(--Trafk);
-        filter: drop-shadow(0px 1px 3px var(--Trafk-dark)) drop-shadow(0px 1px 3px var(--Trafk-dark));
-    }
-    header input[type="search"]::placeholder {
-    color: var(--Kraft);
+
+    footer {
+        background: var(--otherTrafk);
+        filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
     }
 }
