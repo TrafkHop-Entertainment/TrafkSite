@@ -1,27 +1,48 @@
 import os
+from datetime import datetime
 
-base_url = "https://trafkhop-entertainment.github.io/Trafk-Center/"
+base_urls = [
+    "https://trafkhop-entertainment.github.io/TrafkSite/",
+    "https://trafkhop-entertainment.github.io/SourceHop-Notes/"
+]
 directory = "."
-
 allowed_extensions = (".html", ".txt", ".md")
+output_file = "sitemap.xml"
 
-sitemap_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
-sitemap_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+sitemap_lines = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+]
 
+today = datetime.now().strftime("%Y-%m-%d")
+
+print(f"Generiere Sitemap für {len(base_urls)} Basis-URLs...")
+
+found_files = []
 for root, dirs, files in os.walk(directory):
     for filename in files:
         if filename.endswith(allowed_extensions):
             rel_path = os.path.relpath(os.path.join(root, filename), directory)
             url_path = rel_path.replace("\\", "/")
+            # "index.html" in URLs oft weglassen für saubere Links
+            if url_path.endswith("index.html"):
+                url_path = url_path[:-10]
+            found_files.append(url_path)
 
-            sitemap_content += f'  <url>\n'
-            sitemap_content += f'    <loc>{base_url}{url_path}</loc>\n'
-            sitemap_content += f'    <priority>0.80</priority>\n'
-            sitemap_content += f'  </url>\n'
+for base in base_urls:
+    if not base.endswith("/"):
+        base += "/"
 
-sitemap_content += '</urlset>'
+    for file_path in found_files:
+        sitemap_lines.append("  <url>")
+        sitemap_lines.append(f"    <loc>{base}{file_path}</loc>")
+        sitemap_lines.append(f"    <lastmod>{today}</lastmod>")
+        sitemap_lines.append("    <priority>0.80</priority>")
+        sitemap_lines.append("  </url>")
 
-with open("sitemap.xml", "w", encoding="utf-8") as f:
-    f.write(sitemap_content)
+sitemap_lines.append("</urlset>")
 
-print(f"Sitemap erstellt! (Dateiarten: {', '.join(allowed_extensions)})")
+with open(output_file, "w", encoding="utf-8") as f:
+    f.write("\n".join(sitemap_lines))
+
+print(f"Fertig! '{output_file}' wurde mit {len(found_files) * len(base_urls)} Einträgen erstellt.")
