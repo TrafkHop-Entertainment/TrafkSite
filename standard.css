@@ -85,6 +85,125 @@ li {
 
 
 /* ============================================================
+   INTERACTIVE — .do GLOW EFFECT
+   ============================================================ */
+
+.do {
+    display: inline-flex;
+    flex-wrap: wrap;
+    transition: scale .165s ease-in-out;
+    filter: drop-shadow(0px 0px 2px var(--Kraft)) drop-shadow(0px 0px 5px var(--Kraft));
+    color: var(--Kraft);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.do:hover {
+    cursor: pointer;
+    scale: 1.065;
+}
+
+
+/* ============================================================
+   NAVIGATION — BUBBLE STYLE
+   ============================================================ */
+
+.nav {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    width: 85px;
+    height: 85px;
+    align-content: center;
+    justify-content: center;
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tb.png");
+    background-color: transparent;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.nav:hover {
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tbs.png");
+}
+
+.nav.nodo {
+    height: 35px;
+    width: 65px;
+    padding: 5px;
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tb.png");
+}
+
+
+/* ============================================================
+   NAVIGATION — SIDEBAR NAV
+   ============================================================ */
+
+nav {
+    top: 115px;
+    bottom: 85px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    display: flex;
+    width: 115px;
+    position: fixed;
+    left: -105px;
+    background: var(--otherKraft);
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    filter: drop-shadow(0px 0px 8px var(--Kraft));
+    gap: 2%;
+    z-index: 555;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    border-top-right-radius: 65px;
+    border-bottom-right-radius: 65px;
+    transition: left 0.085s ease-in-out;
+}
+
+nav:hover {
+    left: 0;
+}
+
+nav .do {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+nav .nodo:hover {
+    scale: 1 !important;
+}
+
+
+/* ============================================================
+   SECTION HEADER BAR
+   ============================================================ */
+
+.header {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -5px;
+    padding: 10px;
+    background: var(--otherTrafk);
+    filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
+    margin-bottom: 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.header .do {
+    padding: 0;
+}
+
+.date p {
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    font-size: 10px;
+}
+
+
+/* ============================================================
    LAYOUT — MAIN
    ============================================================ */
 
@@ -131,14 +250,15 @@ header {
     justify-content: center;
     text-align: center;
     background: var(--Kraft);
-    filter: drop-shadow(0px 0px 8px var(--Kraft)) drop-shadow(0px 0px 8px var(--Kraft));
+    filter: drop-shadow(0px 0px 3px var(--Kraft)) drop-shadow(0px 0px 5px var(--Kraft));
     border-bottom-left-radius: 65px;
     border-bottom-right-radius: 65px;
     z-index: 999;
 }
 
-header .do, footer .do {
-    filter: drop-shadow(0px 0px 5px var(--otherKraft)) drop-shadow(0px 0px 8px var(--otherKraft));
+header .do,
+footer .do {
+    filter: drop-shadow(0px 0px 3px var(--otherKraft)) drop-shadow(0px 0px 5px var(--otherKraft));
 }
 
 header .mainlogo {
@@ -146,20 +266,10 @@ header .mainlogo {
     width: auto;
 }
 
-header #menuimg {
-    height: 35px;
-    width: auto;
-    position: fixed;
-    left: 65px;
-    display: flex;
-    padding: 0;
-    top: 35px;
-    margin: 0;
-}
-
 header #search {
     position: fixed;
     right: 65px;
+    bottom: 5px;
     border: none;
     height: 35px;
     width: 165px;
@@ -167,7 +277,8 @@ header #search {
     background-color: transparent;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    }
+}
+
 header #search:hover {
     background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tbs.png");
 }
@@ -179,115 +290,30 @@ header input[type="search"]::placeholder {
     color: var(--Kraft);
 }
 
-
-/* ============================================================
-   NAVIGATION — SIDEBAR NAV
-   ============================================================ */
-
-nav {
-    top: 115px;
-    bottom: 85px;
-    padding-top: 35px;
-    padding-bottom: 35px;
-    display: flex;
-    width: 115px;
+header #chatbot,
+header #wikih {
     position: fixed;
-    left: -105px;
-    background: var(--otherKraft);
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    filter: drop-shadow(0px 0px 8px var(--Kraft));
-    gap: 2%;
-    z-index: 555;
-    overflow: scroll;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    border-top-right-radius: 65px;
-    border-bottom-right-radius: 65px;
-    transition: left 0.085s ease-in-out;
+    min-width: 35px;
+    min-height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+    right: 85px;
+    top: 5px;
 }
 
-nav:hover {
-    left: 0;
+header #chatbot {
+    right: 165px;
 }
 
-nav .do {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-nav .nodo:hover {
-    scale: 1 !important;
-}
-
-/* Nav icon bubbles */
-.nav {
-    margin-top: 3px;
-    margin-bottom: 3px;
-    width: 85px;
-    height: 85px;
-    align-content: center;
-    justify-content: center;
-    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tb.png");
-    background-color: transparent;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
-.nav:hover {
-    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tbs.png");
-}
-
-.nav.nodo {
+header #menuimg {
     height: 35px;
-    width: 65px;
-    padding: 5px;
-    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tb.png");
-}
-
-/* Section header bar */
-.header {
-    margin-left: -15px;
-    margin-right: -15px;
-    margin-top: -5px;
-    padding: 10px;
-    background: var(--otherTrafk);
-    filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
-    margin-bottom: 15px;
-    border-radius: 15px;
-    text-align: center;
-}
-
-.header .do {
+    width: auto;
+    position: fixed;
+    left: 65px;
+    display: flex;
     padding: 0;
-}
-
-.date p {
-    position: absolute;
-    top: -5px;
-    right: 5px;
-    font-size: 10px;
-}
-
-
-/* ============================================================
-   INTERACTIVE — .do GLOW EFFECT
-   ============================================================ */
-
-.do {
-    display: inline-flex;
-    flex-wrap: wrap;
-    transition: scale .165s ease-in-out;
-    filter: drop-shadow(0px 0px 2px var(--Kraft)) drop-shadow(0px 0px 5px var(--Kraft));
-    color: var(--Kraft);
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.do:hover {
-    cursor: pointer;
-    scale: 1.065;
+    top: 35px;
+    margin: 0;
 }
 
 
@@ -303,8 +329,11 @@ nav .nodo:hover {
     margin: 0;
 }
 
-#menu:has(input:checked) ~ .menudiv {
-    display: flex;
+.hidden-checkbox {
+    position: fixed;
+    opacity: 0;
+    height: 0;
+    width: 0;
 }
 
 .menudiv {
@@ -314,36 +343,25 @@ nav .nodo:hover {
     margin: 0;
 }
 
-.menu {
-    width: 35px;
-    height: 35px;
-    position: fixed;
-    padding: 0;
-    background: var(--Trafk);
-    border-radius: 50%;
-    align-content: center;
-    justify-content: center;
+#menu:has(input:checked) ~ .menudiv {
+    display: flex;
+}
+
+.nav.menudiv {
+    max-width: 65px;
+    max-height: 65px;
 }
 
 .menu a.do,
 .menu a {
     font-size: 12px;
-    filter: drop-shadow(0px 0px 3px var(--Kraft)) drop-shadow(0px 0px 7px var(--Kraft));
+    filter: drop-shadow(0px 0px 3px var(--Kraft)) drop-shadow(0px 0px 5px var(--Kraft));
     color: var(--Kraft);
 }
 
-.hidden-checkbox {
-    position: fixed;
-    opacity: 0;
-    height: 0;
-    width: 0;
-}
-
 /* Menu item positions */
-#Tools          { left: 135px; }
-
-/* Header utility buttons */
-#wikih   { right: 335px; }
+#Tools  { left: 135px; }
+#wikih  { right: 335px; }
 #chatbot { right: 265px; }
 
 
@@ -355,22 +373,22 @@ footer {
     justify-content: center;
     padding: 0;
     display: flex;
+    position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     height: 45px;
-    background: var(--otherTrafk);
-    filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
+    background: var(--Kraft);
+    filter: drop-shadow(0px 0px 3px var(--Kraft)) drop-shadow(0px 0px 5px var(--Kraft));
     flex-shrink: 0;
     z-index: 999;
     border-top-left-radius: 65px;
     border-top-right-radius: 65px;
-    position: fixed;
 }
 
 footer .nav {
-    max-width: 35px;
-    max-height: 35px;
+    max-width: 30px;
+    max-height: 30px;
 }
 
 footer a {
@@ -378,12 +396,12 @@ footer a {
 }
 
 /* Footer link positions */
-#rights       { position: absolute; right: 30%;   bottom: 25px; }
-#contact      { position: absolute; bottom: 10px; left: 45px; }
-#license      { position: absolute; bottom: 10px; left: 135px; }
-#legalnotice  { position: absolute; bottom: 10px; left: 220px; }
-#privacyPolicy { position: absolute; bottom: 10px; left: 305px; }
-#volume       { position: absolute; bottom: 23px; right: 45px; }
+#rights        { color: var(--Trafk-dark); position: absolute; right: 25%;  bottom: 8px; }
+#contact       { position: absolute; bottom: 8px; left: 45px; }
+#license       { position: absolute; bottom: 8px; left: 105px; }
+#legalnotice   { position: absolute; bottom: 8px; left: 165px; }
+#privacyPolicy { position: absolute; bottom: 10px; left: 225px; }
+#volume        { position: absolute; bottom: 8px; right: 35px; }
 
 
 /* ============================================================
@@ -393,8 +411,8 @@ footer a {
 @media (max-width: 1080px) {
 
     /* Typography */
-    h1, h1 a { font-size: 25px; }
-    h2, h2 a { font-size: 23px; }
+    h1, h1 a { font-size: 12px; }
+    h2, h2 a { font-size: 8px; }
     h3, h3 a { font-size: 18px; }
     h4, h4 a { font-size: 15px; }
 
@@ -416,6 +434,7 @@ footer a {
     section {
         margin: 15px;
         padding: 15px;
+        border-radius: 23px;
     }
 
     .header {
@@ -438,9 +457,14 @@ footer a {
         padding: 0;
     }
 
+    .nav.menudiv {
+        max-width: 35px;
+        max-height: 35px;
+    }
+
     header #search {
         height: 25px;
-        width: 115px;
+        width: 65px;
         right: 35px;
         bottom: 5px;
     }
@@ -461,17 +485,27 @@ footer a {
         min-height: 20px;
         max-width: 20px;
         max-height: 20px;
-        right: 55px;
+        right: 35px;
         top: 5px;
     }
 
     header #chatbot {
-        right: 105px;
+        right: 75px;
     }
 
     header #chatbot a {
         font-size: 7px;
     }
+
+    nav {
+        width: 65px;
+        left: -50px;
+    }
+    nav .nav {
+        max-width: 45px;
+        max-height: 45px;
+    }
+
 
     /* Footer */
     footer {
@@ -479,13 +513,26 @@ footer a {
     }
 
     footer h4 {
-        font-size: 10px;
+        font-size: 6px;
     }
+
     footer .nav {
         max-width: 35px;
         max-height: 15px;
     }
+
     footer .nav a {
         font-size: 5px;
     }
+
+    footer #volume {
+        width: 45px;
+    }
+
+    #rights {
+        position: absolute;
+        right: 15%;
+        bottom: 8px;
+    }
+
 }

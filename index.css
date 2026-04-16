@@ -27,7 +27,7 @@ header a:has(.mainlogo):hover + p {
     padding: 15px;
 }
 #community {
-    left: 65%;
+    left: 55%;
     right: 3%;
     top: 12%;
     bottom: 35%;
@@ -64,5 +64,9 @@ header a:has(.mainlogo):hover + p {
         padding-left: 5px;
         top: 85px;
         font-size: 10px;
+    }
+
+    img, iframe {
+        min-width: 65% !important;
     }
 }
