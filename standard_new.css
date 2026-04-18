@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.nav {
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tb.png");
+    width: 3rem;
+    height: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.nav:hover {
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tbs.png");
+}
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.65rem;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    align-items: center;
+    gap: 2rem;
+}
+header #search {
+    height: 3rem;
+    width: 15rem;
+    right: 1rem;
+    position: fixed;
+}
