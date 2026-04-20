@@ -1,14 +1,6 @@
 #logo {
     height: 4rem;
     width: 4rem;
-    left: 0.5rem;
+    left: 2rem;
     position: fixed;
-}
-#trafkverse {
-    position: fixed;
-    right: 17rem;
-}
-#askAlfonz {
-    position: fixed;
-    right: 21rem;
 }
