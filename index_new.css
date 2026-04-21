@@ -4,3 +4,18 @@
     left: 2rem;
     position: fixed;
 }
+
+#trafkhopEnt {
+    height: 8rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8rem;
+}
+
+
+@media (max-aspect-ratio: 3/4)  {
+    #trafkhopEnt {
+        height: 4.5rem;
+    }
+}

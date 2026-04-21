@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("HTML URLs gefunden:", urls.length, urls.slice(0, 5));
 
             const tree = buildTree(urls);
+            collapseSelf(tree);
             console.log("Tree root keys:", Object.keys(tree));
             renderTree(tree, navContainer, true);
         })
@@ -43,6 +44,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         return root;
+    }
+
+    function collapseSelf(node) {
+        Object.keys(node).forEach(key => {
+            const n = node[key];
+            const childKeys = Object.keys(n.children);
+
+            const selfKey = childKeys.find(ck =>
+                ck === key ||
+                ck === key + '.html' ||
+                decodeURIComponent(ck).replace(/\.html$/, '') === n.name
+            );
+
+            if (selfKey && !n.path) {
+                // Link vom Kind auf den Parent hochziehen, Kind löschen
+                n.path = n.children[selfKey].path;
+                delete n.children[selfKey];
+            }
+
+            collapseSelf(n.children);
+        });
     }
 
     function renderTree(node, parentEl, isRoot = false) {
