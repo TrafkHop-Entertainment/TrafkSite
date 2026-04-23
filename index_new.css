@@ -1,6 +1,48 @@
+/*
+Farben
+*/
+
+:root {
+    --Kraft:      #fff495;
+    --Kraft-dark: #ede59f;
+    --Trafk:      #5a3998;
+    --Trafk-dark: #351b67;
+}
+
+/*
+Important Stuff
+*/
+
+body {
+    background-color: black;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/13WorldsBG3.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-position-y: -5rem;
+    background-size: contain;
+
+    /*Parallax Effekt*/
+    transform: translateZ(-65px) scale(4);
+    transform-origin: top center;
+    z-index: -1;
+}
+
+
+
+/*
+Main
+*/
+
 #logo {
-    height: 4rem;
-    width: 4rem;
+    height: 2.5rem;
+    width: 2.5rem;
     left: 2rem;
     position: fixed;
 }
@@ -9,9 +51,43 @@
     height: 8rem;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    top: 8rem;
+    top: 3rem;
+    z-index: 15;
+
+    /*Parallax Effekt*/
+    transform: translateX(-50%) translateZ(-5px) scale(1.5);
+    transform-origin: center top;
 }
+
+#projects {
+    position: absolute;
+    left: 50%;
+    top: 18rem;
+    height: 5rem;
+    z-index: 14;
+    color: white;
+    font-size: 4rem;
+
+    transform:  translateX(-50%) translateZ(-15px) scale(2);
+    transform-origin: center top;
+}
+
+#RSA img {
+    position: absolute;
+    left: 5rem;
+    top: 28rem;
+    height: 5rem;
+    z-index: 14;
+
+    transform: translateZ(-5px) scale(1.5);
+    transform-origin: center top;
+}
+
+
+
+/*
+Handy Modus
+*/
 
 
 @media (max-aspect-ratio: 3/4)  {
