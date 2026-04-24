@@ -1,72 +1,92 @@
-header p {
-    font-weight: bold;
-    padding-left: 35px;
-    font-size: 1.25vw;
-    opacity: 0;
-    transition: opacity .165s ease-in-out;
-    position: fixed;
-    top: 112px;
+/*
+Farben
+*/
+
+:root {
+    --Kraft:      #fff495;
+    --Kraft-dark: #ede59f;
+    --Trafk:      #5a3998;
+    --Trafk-dark: #351b67;
 }
 
-header a:has(.mainlogo):hover + p {
-    opacity: 1;
+/*
+Important Stuff
+*/
 
-}
-#NewestProjects {
-    left: 3%;
-    right: 45%;
-    top: 12%;
-    bottom: 35%;
-}
-#NewestProjects img {
-    max-width: 43%;
-    padding: 15px;
-}
-#NewestProjects iframe {
-    max-width: 43%;
-    padding: 15px;
-}
-#community {
-    left: 55%;
-    right: 3%;
-    top: 12%;
-    bottom: 35%;
-}
-#community img {
-    max-width: 43%;
-    padding: 15px;
-}
-#newerNews {
-    left: 3%;
-    right: 33%;
-    top: 115%;
-    bottom: -40%;
-}
-#ourWiki {
-    left: 5%;
-    right: 5%;
-    top: 65%;
-    bottom: -15%;
-}
-#askAlfonz {
-    left: 33%;
-    right: 3%;
-    top: 140%;
-    bottom: -65%;
+body {
+    background-color: black;
 }
 
-#spacer {
-    bottom: -78%;
+main::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/13WorldsBG3.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-position-y: -5rem;
+    background-size: contain;
+
+    /*Parallax Effekt*/
+    transform: translateZ(-65px) scale(4);
+    transform-origin: top center;
+    z-index: -1;
 }
 
-@media (max-width: 1000px) {
-    header p {
-        padding-left: 5px;
-        top: 85px;
-        font-size: 10px;
-    }
 
-    img, iframe {
-        min-width: 65% !important;
+
+/*
+Main
+*/
+
+
+
+#trafkhopEnt {
+    height: 8rem;
+    position: absolute;
+    left: 50%;
+    top: 3rem;
+    z-index: 15;
+
+    /*Parallax Effekt*/
+    transform: translateX(-50%) translateZ(-5px) scale(1.5);
+    transform-origin: center top;
+}
+
+#projects {
+    position: absolute;
+    left: 50%;
+    top: 45rem;
+    height: 5rem;
+    z-index: 14;
+    color: white;
+    font-size: 4rem;
+
+    transform:  translateX(-50%) translateZ(-15px) scale(2);
+    transform-origin: center top;
+}
+
+#RSA {
+    position: absolute;
+    left: 5rem;
+    top: 65rem;
+    height: 5rem;
+    z-index: 14;
+
+    transform: translateZ(-8px) scale(1);
+    transform-origin: center top;
+}
+
+
+
+/*
+Handy Modus
+*/
+
+
+@media (max-aspect-ratio: 3/4)  {
+    #trafkhopEnt {
+        height: 4.5rem;
     }
 }

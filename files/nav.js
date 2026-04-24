@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initNav() {
     const navContainer = document.getElementById('sidebar-nav');
     if (!navContainer) return;
 
-    fetch('sitemap.xml')
+    fetch('/sitemap.xml')
         .then(r => r.text())
         .then(str => {
             const xml = new window.DOMParser().parseFromString(str, "text/xml");
@@ -117,6 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         parentEl.appendChild(ul);
     }
-});
+}
 
 /*This was made with ai*/

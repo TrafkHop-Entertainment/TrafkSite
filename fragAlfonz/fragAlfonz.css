@@ -1,85 +1,67 @@
-#chatbott {
-    min-width: 100%;
-    min-height: 100%;
+/*
+Farben
+*/
+
+:root {
+    --Kraft:      #fff495;
+    --Kraft-dark: #ede59f;
+    --Trafk:      #5a3998;
+    --Trafk-dark: #351b67;
 }
 
-main {
-    padding-bottom: 185px;
-    padding-right: 165px;
+#chat-window {
+    position: fixed;
+    top: 8rem;
+    right: 3rem;
+    left: 3rem;
+    bottom: 8rem;
 }
-
-#chat-input {
-    width: 100%;
-    height: 35px;
-    background: var(--Kraft);
-    filter: drop-shadow(0px 1px 3px var(--Kraft-dark)) drop-shadow(0px 1px 3px var(--Kraft-dark));
-    border: none;
-}
-
 #chat-input-row {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    bottom: 105px;
-    left: 135px;
-    right: 50px;
-    gap: 35px;
-}
-
-#send-btn {
-    width: 10%;
-    height: 35px;
-    background: var(--Kraft);
-    filter: drop-shadow(0px 1px 3px var(--Kraft-dark)) drop-shadow(0px 1px 3px var(--Kraft-dark));
-    border: none;
-}
-
-.header {
-    text-align: center;
-}
-p {
-    font-size: 15px;
-}
-
-#chat-input-row input[type="text"]::placeholder {
-    text-align: center;
-    font-size: 15px;
-    color: var(--Trafk);
-    font-weight: bolder;
-}
-
-#send-btn {
-    width: 25%;
+    position: fixed;
+    bottom: 4rem;
+    height: 6rem;
+    left: 4rem;
+    right: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-#send-btn a {
-    font-weight: bolder;
-    font-size: 15px !important;
+    gap: 1rem;
 }
 
-@media (max-width: 1080px) {
-    main {
-        padding-bottom: 85px;
-        padding-right: 65px;
-    }
+main::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
 
-    #chat-input-row {
-        gap: 15px;
-    }
+    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/13WorldsBG3.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-position-y: -5rem;
+    background-size: contain;
 }
 
-html.dark-mode {
-    #chat-input {
-        background: var(--otherTrafk);
-        filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
-    }
-    #send-btn {
-        background: var(--otherTrafk);
-        filter: drop-shadow(0px 3px 3px var(--otherTrafk-dark)) drop-shadow(0px 3px 3px var(--otherTrafk-dark));
-    }
-    #chat-input-row input[type="text"]::placeholder {
-    color: var(--Kraft);
+#chat-input {
+    padding: 0.65rem;
+    font-size: 1.15rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    filter: drop-shadow(0px 0px 5px var(--Kraft));
+    background-color: var(--Kraft);
 }
+#chat-input::placeholder {
+    color: black;
+}
+
+#send-btn {
+    height: 3rem;
+    width: 3rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Trafk);
+    border: 5px solid var(--Trafk-dark);
+    border-radius: 50%;
+    filter: none;
 }

@@ -32,7 +32,7 @@ Die TRAFKBLASEN navs
 */
 
 .nav {
-    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tb.png");
+    background-image: url("../wiki/assets/SourceHop-Images/TrafkSite/tb.png");
     width: 2.5rem;
     height: 2.5rem;
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@ Die TRAFKBLASEN navs
     transition: 0.085s ease-in-out;
 }
 .nav:hover {
-    background-image: url("wiki/assets/SourceHop-Images/TrafkSite/tbs.png");
+    background-image: url("../wiki/assets/SourceHop-Images/TrafkSite/tbs.png");
 }
 .nav a {
     text-decoration: none;
@@ -70,6 +70,16 @@ header {
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     z-index: 999;
+}
+
+#logo {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+#logoa {
+    display: flex;
+    position: fixed;
+    left: 2rem;
 }
 
 header #search {
@@ -100,10 +110,10 @@ nav {
     display: flex;
     flex-direction: column;
     position: fixed;
-    left: 0;
-    bottom: 2rem;
+    left: -5.5rem;
+    bottom: 5rem;
     top: 5rem;
-    width: 0.85rem;
+    width: 6rem;
     background-color: var(--Kraft-dark);
     transition: 0.15s ease-in-out;
     overflow-y: scroll;
@@ -114,52 +124,17 @@ nav {
     z-index: 997;
 }
 
-nav .nav {
-    width: 5rem;
-    height: 5rem;
-    display: none;
-}
-nav .nav a {
-    font-size: 1.35rem;
-}
-
 nav:hover {
-    width: 23rem;
-}
-
-nav:hover .nav {
-    display: flex;
-}
-
-#askAlfonz {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    right: 0;
-    height: calc(100vh - 8rem);
-    top: 5rem;
-    width: 0.85rem;
-    background-color: var(--Kraft-dark);
-    transition: 0.15s ease-in-out;
-    overflow-y: scroll;
-    border-top-left-radius: 2rem;
-    border-bottom-left-radius: 2rem;
-    z-index: 997;
-    border: none;
-    margin: 0;
-    padding: 0;
-}
-
-
-#askAlfonz:hover {
- width: 23rem;
+    left: 0;
 }
 
 
 .tree-ul {
     list-style: none;
     display: none;
-    padding-left: 1rem;
+    padding-left: 0.35rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
 }
 
 .tree-ul.root-ul {
@@ -173,17 +148,17 @@ nav:hover .nav {
 .tree-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 0.15rem;
+    margin-bottom: 0.15rem;
 }
 
 .arrow {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 0.85rem;
     color: var(--Trafk);
     transition: transform 0.15s;
     user-select: none;
-    padding: 1rem;
+    padding: 0.35rem;
 }
 
 .arrow.open {
@@ -199,7 +174,7 @@ footer {
     padding-left: 8rem;
     padding-right: 8rem;
     background-color: var(--Kraft);
-    bottom: -3.5rem;
+    bottom: -3.55rem;
     left: 0;
     right: 0;
     height: 4rem;
@@ -222,16 +197,6 @@ footer:hover {
 footer #volume {
     width: 6rem;
 }
-
-
-#Stopper {
-    width: 100%;
-    height: 5rem;
-    background-color: var(--Kraft);
-    position: absolute;
-    top: 500rem;
-}
-
 
 
 /*
@@ -286,22 +251,17 @@ ANKLICKBARES
     footer p {
         font-size: 0.65rem;
     }
-    .arrow {
-        font-size: 1.5rem;
-    }
 
+    nav {
+        width: 8rem;
+        left: -7rem;
+    }
     nav .nav {
         width: 3rem;
         height: 3rem;
     }
     nav .nav a {
         font-size: 0.85rem;
-    }
-    nav:hover, #askAlfonz:hover  {
-        width: calc(100vw - 3rem);
-    }
-    nav, #askAlfonz {
-        width: 1.35rem;
     }
     .arrow {
         font-size: 1rem;
