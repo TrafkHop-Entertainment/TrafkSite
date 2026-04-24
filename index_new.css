@@ -62,7 +62,7 @@ Main
 #projects {
     position: absolute;
     left: 50%;
-    top: 18rem;
+    top: 45rem;
     height: 5rem;
     z-index: 14;
     color: white;
@@ -72,14 +72,14 @@ Main
     transform-origin: center top;
 }
 
-#RSA img {
+#RSA {
     position: absolute;
     left: 5rem;
-    top: 28rem;
+    top: 65rem;
     height: 5rem;
     z-index: 14;
 
-    transform: translateZ(-5px) scale(1.5);
+    transform: translateZ(-8px) scale(1);
     transform-origin: center top;
 }
 

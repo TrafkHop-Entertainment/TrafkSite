@@ -87,7 +87,7 @@ header #search.do {
     position: fixed;
     right: 15rem;
 }
-#askAlfonz {
+#askAlfonznav {
     position: fixed;
     right: 18rem;
 }
@@ -100,12 +100,12 @@ nav {
     display: flex;
     flex-direction: column;
     position: fixed;
-    left: -5.5rem;
-    width: 6rem;
-    top: 5.35rem;
-    bottom: 1.35rem;
+    left: 0;
+    bottom: 2rem;
+    top: 5rem;
+    width: 0.85rem;
     background-color: var(--Kraft-dark);
-    transition: left 0.15s ease-in-out;
+    transition: 0.15s ease-in-out;
     overflow-y: scroll;
     padding: 0.15rem;
     padding-top: 1rem !important;
@@ -114,29 +114,52 @@ nav {
     z-index: 997;
 }
 
-#navarrow {
-    position: fixed;
-    left: 0.35rem;
-    top: 5.85rem;
-    font-size: 2rem;
-    color: var(--Trafk);
-    z-index: 9999;
-    transition: left 0.15s ease-in-out;
+nav .nav {
+    width: 5rem;
+    height: 5rem;
+    display: none;
 }
-nav:hover + #navarrow {
-    left: 6rem;
+nav .nav a {
+    font-size: 1.35rem;
 }
-
-
 
 nav:hover {
-    left: 0;
+    width: 23rem;
 }
+
+nav:hover .nav {
+    display: flex;
+}
+
+#askAlfonz {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    height: calc(100vh - 8rem);
+    top: 5rem;
+    width: 0.85rem;
+    background-color: var(--Kraft-dark);
+    transition: 0.15s ease-in-out;
+    overflow-y: scroll;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    z-index: 997;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+#askAlfonz:hover {
+ width: 23rem;
+}
+
 
 .tree-ul {
     list-style: none;
     display: none;
-    padding-left: 0.35rem;
+    padding-left: 1rem;
 }
 
 .tree-ul.root-ul {
@@ -150,17 +173,17 @@ nav:hover {
 .tree-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .arrow {
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 2rem;
     color: var(--Trafk);
     transition: transform 0.15s;
     user-select: none;
-    padding: 0.05rem;
+    padding: 1rem;
 }
 
 .arrow.open {
@@ -186,12 +209,10 @@ footer {
     z-index: 998;
 }
 
-#footerarrow{
-    position: fixed;
-    right: 1.45rem;
-    top: -1.65rem;
-    font-size: 2rem;
-    color: var(--Trafk);
+#fleft {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
 }
 
 footer:hover {
@@ -235,23 +256,23 @@ ANKLICKBARES
 
 @media (max-aspect-ratio: 3/4) {
     header #search {
-        width: 4rem;
+        width: 5rem;
     }
     header, footer {
         height: 4rem;
     }
     header #logo {
-        width: 3rem;
-        height: 3rem;
+        width: 3.5rem;
+        height: 3.5rem;
     }
     .nav {
-        width: 2rem;
-        height: 2rem;
+        width: 3rem;
+        height: 3rem;
     }
     #trafkverse {
         right: 8rem;
     }
-    #askAlfonz {
+    #askAlfonznav {
         right: 12rem;
     }
     footer {
@@ -267,5 +288,26 @@ ANKLICKBARES
     }
     .arrow {
         font-size: 1.5rem;
+    }
+
+    nav .nav {
+        width: 3rem;
+        height: 3rem;
+    }
+    nav .nav a {
+        font-size: 0.85rem;
+    }
+    nav:hover, #askAlfonz:hover  {
+        width: calc(100vw - 3rem);
+    }
+    nav, #askAlfonz {
+        width: 1.35rem;
+    }
+    .arrow {
+        font-size: 1rem;
+        padding: 0.35rem;
+    }
+    .tree-ul {
+        padding-left: 0.35rem;
     }
 }
