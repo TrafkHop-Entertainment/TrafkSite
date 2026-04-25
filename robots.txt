@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://trafkhop-entertainment.github.io/Trafk-Center/sitemap.xml
