@@ -9,6 +9,6 @@ On this Website, you can find every Info
 about Trafkhop Entertainment.
 We even have our own wiki!
 
-LINK: https://trafkhop-entertainment.github.io/Trafk-Center/
+LINK: https://trafkhop-entertainment.github.io/TrafkSite/
 
-//For Trafkhop Members: git clone --recursive git@github.com:Trafkhop-Entertainment/Trafk-Center.git
+//For Trafkhop Members: git clone --recursive git@github.com:Trafkhop-Entertainment/TrafkSite.git
