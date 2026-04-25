@@ -3,24 +3,24 @@ function initNav() {
     if (!navContainer) return;
 
     fetch('sitemap.xml')
-        .then(r => r.text())
-        .then(str => {
-            const xml = new window.DOMParser().parseFromString(str, "text/xml");
-            const urls = Array.from(xml.querySelectorAll("loc"))
-                .map(el => el.textContent.trim())
-                .filter(u => u.endsWith('.html'));
+    .then(r => r.text())
+    .then(str => {
+        const xml = new window.DOMParser().parseFromString(str, "text/xml");
+        const urls = Array.from(xml.querySelectorAll("loc"))
+        .map(el => el.textContent.trim())
+        .filter(u => u.endsWith('.html'));
 
-            console.log("HTML URLs gefunden:", urls.length, urls.slice(0, 5));
+        console.log("HTML URLs gefunden:", urls.length, urls.slice(0, 5));
 
-            const tree = buildTree(urls);
-            collapseSelf(tree);
-            console.log("Tree root keys:", Object.keys(tree));
-            renderTree(tree, navContainer, true);
-        })
-        .catch(err => {
-            console.error("Sitemap Fehler:", err);
-            navContainer.innerHTML = '<p style="color:red">Fehler: ' + err.message + '</p>';
-        });
+        const tree = buildTree(urls);
+        collapseSelf(tree);
+        console.log("Tree root keys:", Object.keys(tree));
+        renderTree(tree, navContainer, true);
+    })
+    .catch(err => {
+        console.error("Sitemap Fehler:", err);
+        navContainer.innerHTML = '<p style="color:red">Fehler: ' + err.message + '</p>';
+    });
 
     function buildTree(urls) {
         const root = {};
@@ -49,21 +49,23 @@ function initNav() {
     function collapseSelf(node) {
         Object.keys(node).forEach(key => {
             const n = node[key];
+
+            collapseSelf(n.children);
+
             const childKeys = Object.keys(n.children);
 
             const selfKey = childKeys.find(ck =>
-                ck === key ||
-                ck === key + '.html' ||
-                decodeURIComponent(ck).replace(/\.html$/, '') === n.name
+            ck === key ||
+            ck === key + '.html' ||
+            decodeURIComponent(ck).replace(/\.html$/, '') === n.name
             );
 
             if (selfKey && !n.path) {
-                // Link vom Kind auf den Parent hochziehen, Kind löschen
-                n.path = n.children[selfKey].path;
+                const selfChild = n.children[selfKey];
+                n.path = selfChild.path;
+                Object.assign(n.children, selfChild.children);
                 delete n.children[selfKey];
             }
-
-            collapseSelf(n.children);
         });
     }
 
