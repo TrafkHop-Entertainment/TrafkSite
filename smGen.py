@@ -5,7 +5,7 @@ base_urls = [
     "https://trafkhop-entertainment.github.io/TrafkSite/"
 ]
 directory = "."
-allowed_extensions = (".html")
+allowed_extensions = (".html", ".md", ".txt")
 output_file = "sitemap.xml"
 
 sitemap_lines = [
