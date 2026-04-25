@@ -4,3 +4,6 @@
 [submodule "projects/AskAlfonz/AskAlfonz"]
 	path = projects/AskAlfonz/AskAlfonz
 	url = git@github.com:TrafkHop-Entertainment/AskAlfonz.git
+[submodule "SourceHop-Notes"]
+	path = SourceHop-Notes
+	url = git@github.com:TrafkHop-Entertainment/SourceHop-Notes.git
