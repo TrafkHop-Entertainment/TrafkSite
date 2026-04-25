@@ -12,13 +12,11 @@ jobs:
       id-token: write
       contents: read
 
-    steps:
-      - name: Add hf.co to known hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H hf.co >> ~/.ssh/known_hosts 2>/dev/null || true
-          echo "StrictHostKeyChecking no" >> ~/.ssh/config
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
+    steps:
       - name: Configure HF access
         run: |
           git config --global url."https://${{ secrets.HF_TOKEN }}@huggingface.co/".insteadOf "git@hf.co:"
@@ -27,5 +25,11 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - uses: actions/deploy-pages@v4
+        id: deployment
