@@ -14,14 +14,14 @@ function loadComponent(elementId, filePath, callback) {
     .catch(error => console.error('Fehler beim Laden von ' + filePath, error));
 }
 
-loadComponent('header-placeholder', '/files/header.html');
+loadComponent('header-placeholder', 'files/header.html');
 
-loadComponent('nav-placeholder', '/files/nav.html', () => {
+loadComponent('nav-placeholder', 'files/nav.html', () => {
     if (typeof initNav === 'function') {
         initNav();
     }
 });
 
-loadComponent('footer-placeholder', '/files/footer.html');
+loadComponent('footer-placeholder', 'files/footer.html');
 
 /*Made with AI*/
