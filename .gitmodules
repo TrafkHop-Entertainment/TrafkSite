@@ -7,3 +7,9 @@
 [submodule "SourceHop-Notes"]
 	path = SourceHop-Notes
 	url = git@github.com:TrafkHop-Entertainment/SourceHop-Notes.git
+[submodule "projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive"]
+	path = projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive
+	url = git@github.com:TrafkHop-Entertainment/Raufbold3bs-Scratch-Archive.git
+[submodule "projects/TrafkTux/TrafkTux"]
+	path = projects/TrafkTux/TrafkTux
+	url = git@github.com:TrafkHop-Entertainment/TrafkTux.git
