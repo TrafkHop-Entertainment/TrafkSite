@@ -19,6 +19,10 @@ jobs:
           ssh-keyscan -H hf.co >> ~/.ssh/known_hosts 2>/dev/null || true
           echo "StrictHostKeyChecking no" >> ~/.ssh/config
 
+      - name: Configure HF access
+        run: |
+          git config --global url."https://${{ secrets.HF_TOKEN }}@huggingface.co/".insteadOf "git@hf.co:"
+
       - uses: actions/checkout@v4
         with:
           submodules: recursive
