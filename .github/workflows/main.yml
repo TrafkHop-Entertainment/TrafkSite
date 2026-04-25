@@ -19,8 +19,11 @@ jobs:
       - name: Add HF to known_hosts
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan huggingface.co >> ~/.ssh/known_hosts
-          ssh-keyscan hf.co >> ~/.ssh/known_hosts
+          # Force IPv4 (-4) and use the full domain
+          ssh-keyscan -4 huggingface.co >> ~/.ssh/known_hosts
+          # Optional: Add the short domain only if you actually use it in URLs
+          ssh-keyscan -4 hf.co >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
 
       - uses: actions/checkout@v4
         with:
