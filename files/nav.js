@@ -2,7 +2,7 @@ function initNav() {
     const navContainer = document.getElementById('sidebar-nav');
     if (!navContainer) return;
 
-    fetch('/sitemap.xml')
+    fetch('sitemap.xml')
         .then(r => r.text())
         .then(str => {
             const xml = new window.DOMParser().parseFromString(str, "text/xml");
