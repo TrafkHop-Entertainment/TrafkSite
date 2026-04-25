@@ -1,0 +1,6 @@
+[submodule "projects/AskAlfonz/AlfonzProxy"]
+	path = projects/AskAlfonz/AlfonzProxy
+	url = git@hf.co:spaces/TrafkHop-Entertainment/AlfonzProxy
+[submodule "projects/AskAlfonz/AskAlfonz"]
+	path = projects/AskAlfonz/AskAlfonz
+	url = git@github.com:TrafkHop-Entertainment/AskAlfonz.git
