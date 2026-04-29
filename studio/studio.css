@@ -13,8 +13,14 @@ Farben
 Important Stuff
 */
 
+
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     background-color: black;
+    color: white;
 }
 
 main::before {
@@ -33,60 +39,82 @@ main::before {
     transform-origin: top center;
     z-index: -1;
 }
-
-
-
 /*
 Main
 */
 
 
-
-#trafkhopEnt {
-    height: 8rem;
+#studio {
     position: absolute;
+    top: -65rem;
     left: 50%;
-    top: 3rem;
-    z-index: 15;
+    transform: translateX(-50%) translateZ(-65px) scale(1);
+    transform-origin: center top;
+    z-index: 8;
+}
 
-    /*Parallax Effekt*/
-    transform: translateX(-50%) translateZ(-5px) scale(1.5);
+#links {
+    position: absolute;
+    top: 35rem;
+    left: -23rem;
+    transform: translateZ(-15px) scale(2);
+    transform-origin: center top;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+}
+
+#members {
+    position: absolute;
+    top: 40rem;
+    left: 28rem;
+    transform: translateZ(-25px) scale(2.5);
     transform-origin: center top;
 }
 
-#projects {
-    position: absolute;
-    left: 50%;
-    top: 45rem;
-    height: 5rem;
-    z-index: 14;
-    color: white;
-    font-size: 4rem;
-
-    transform:  translateX(-50%) translateZ(-15px) scale(2);
-    transform-origin: center top;
+#description {
+position: absolute;
+top: 75rem;
+left: 3rem;
+right: 45rem;
+transform: translateZ(-10px) scale(1.5);
+transform-origin: center top;
+z-index: 6;
 }
 
-#RSA {
+#saying {
     position: absolute;
+    top: 115rem;
     left: 5rem;
-    top: 65rem;
-    height: 5rem;
-    z-index: 14;
-
-    transform: translateZ(-8px) scale(1);
+    right: 45rem;
+    transform: translateZ(-5px) scale(1.5);
     transform-origin: center top;
 }
 
+#inspiration {
+    position: absolute;
+    top: 145rem;
+    left: -5rem;
+    right: 45rem;
+    transform: translateZ(-15px) scale(2);
+    transform-origin: center top;
+}
 
-
-/*
-Handy Modus
-*/
-
+#Logosetc {
+    position: absolute;
+    top: 35rem;
+    right: -85%;
+    left: 155%;
+    transform: translateZ(-35px) scale(5);
+    transform-origin: center top;
+    z-index: 5;
+}
+#Logosetc img {
+    margin: 1rem;
+    max-width: 65%;
+    min-width: 65%;
+}
 
 @media (max-aspect-ratio: 3/4)  {
-    #trafkhopEnt {
-        height: 4.5rem;
-    }
+
 }
