@@ -26,6 +26,9 @@ main {
     perspective: 15px;
     perspective-origin: center;
 }
+body {
+    margin-bottom: 3rem;
+}
 
 /*
 Die TRAFKBLASEN navs
