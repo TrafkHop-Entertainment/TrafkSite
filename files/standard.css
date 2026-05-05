@@ -25,9 +25,21 @@ main {
     overflow-y: auto;
     perspective: 15px;
     perspective-origin: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
-body {
-    margin-bottom: 3rem;
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding:3rem;
+    padding-bottom: 5rem !important;
 }
 
 /*
@@ -124,7 +136,7 @@ nav {
     padding-top: 1rem !important;
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
-    z-index: 997;
+    z-index: 997 !important;
 }
 
 nav:hover {
