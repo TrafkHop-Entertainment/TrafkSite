@@ -5,6 +5,7 @@ DIE FARBEN
 
 :root {
     --Kraft:      #fff495;
+    --Kraftlight: #f6f3d5;
     --Kraft-dark: #ede59f;
     --Trafk:      #5a3998;
     --Trafk-dark: #351b67;
@@ -17,29 +18,69 @@ Ganze SEITE
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+p, h1, h2,h3,h4,h5,h6 {
+    color: var(--Kraftlight);
+}
+footer p, header p {
+    color: var(--Trafk-dark);
+}
+
+h1 {
+    margin-bottom: 35px;
+    border-bottom: 3px solid var(--Kraft);
+}
+main img {
+    display: block;
+    max-width: 850px;
+    height: auto;
 }
 
 main {
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 15px;
-    perspective-origin: center;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    padding: 5rem;
+    background-color: black;
+}
+
+
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+
+    background-image: url("/SourceHop-Notes/assets/SourceHop-Images/ModelsJourney/13WorldsBG3.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+
+    /*Parallax Effekt*/
+    transform: translateZ(-65px) scale(6) translateY(-365px);
+    transform-origin: top center;
+    z-index: -1;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform-style: preserve-3d;
+    perspective: 15px;
+    perspective-origin: center;
+    display: flex;
 }
 
 section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
     padding:3rem;
     padding-bottom: 5rem !important;
+    margin-bottom: 85px;
 }
 
 /*
@@ -121,63 +162,81 @@ header #search.do {
 NAVIGATION
 */
 
-nav {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    left: -5.5rem;
-    bottom: 5rem;
-    top: 5rem;
-    width: 6rem;
-    background-color: var(--Kraft-dark);
-    transition: 0.15s ease-in-out;
-    overflow-y: scroll;
-    padding: 0.15rem;
-    padding-top: 1rem !important;
-    border-top-right-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    z-index: 997 !important;
-}
-
-nav:hover {
-    left: 0;
-}
-
-
-.tree-ul {
-    list-style: none;
-    display: none;
-    padding-left: 0.35rem;
-    padding-top: 0.35rem;
-    padding-bottom: 0.35rem;
-}
-
-.tree-ul.root-ul {
-    display: block;
-}
-
-.tree-ul.open {
-    display: block;
-}
-
-.tree-item {
+#header-nav {
+    position: absolute;
+    left: 6.5rem;
+    right: 22rem;
+    height: 100%;
     display: flex;
     align-items: center;
-    gap: 0.15rem;
-    margin-bottom: 0.15rem;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
 }
 
-.arrow {
+#header-nav .tree-ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+#header-nav .tree-ul.root-ul {
+    display: flex;
+    width: max-content;
+}
+
+#header-nav .tree-ul.open {
+    display: flex;
+}
+
+#header-nav .tree-ul:not(.root-ul) {
+    margin: 0 0.8rem !important;
+    padding: 0 0.6rem !important;
+    border-left: 2px dashed rgba(90, 57, 152, 0.3);
+    border-right: 2px dashed rgba(90, 57, 152, 0.3);
+}
+
+#header-nav .tree-li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#header-nav .tree-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.2rem;
+    margin-bottom: 0 !important;
+}
+
+#header-nav li::before {
+    content: none !important;
+}
+
+#header-nav .arrow {
+    font-size: 0.65rem !important;
+    padding: 0.2rem !important;
+    color: var(--Trafk) !important;
     cursor: pointer;
-    font-size: 0.85rem;
-    color: var(--Trafk);
-    transition: transform 0.15s;
     user-select: none;
-    padding: 0.35rem;
+    transform: rotate(0deg) !important;
+    transition: transform 0.2s ease-in-out !important;
 }
 
-.arrow.open {
-    transform: rotate(90deg);
+#header-nav .arrow.open {
+    transform: rotate(90deg) !important;
+    color: var(--Trafk-dark) !important;
 }
 
 footer {
@@ -234,7 +293,40 @@ ANKLICKBARES
 }
 
 
-@media (max-aspect-ratio: 3/4) {
+@media (max-aspect-ratio: 1/1) {
+    #header-nav {
+        left: 7rem !important;
+        overflow-x: auto !important;
+    }
+    #header-nav .tree-ul:not(.root-ul) {
+        margin: 0 0.5rem !important;
+        padding: 0 0.3rem !important;
+        gap: 0.4rem;
+    }
+    #header-nav .nav {
+        width: 2rem;
+        height: 2rem;
+    }
+    #header-nav .nav a {
+        font-size: 0.65rem !important;
+    }
+    #header-nav .arrow {
+        font-size: 0.65rem !important;
+    }
+
+    main img {
+    display: block;
+    max-width: 350px;
+    height: auto;
+    }
+
+    main::before {
+    transform: translateZ(-65px) scale(9) translateY(-165px);
+    }
+    p, h1, h2, h3, h4, h5, h6, a, li {
+        font-size: 99% !important;
+    }
+
     header #search {
         width: 5rem;
     }
@@ -248,6 +340,9 @@ ANKLICKBARES
     .nav {
         width: 3rem;
         height: 3rem;
+    }
+    .nav a {
+        font-size: 0.65rem !important;
     }
     #trafkverse {
         right: 8rem;
@@ -276,7 +371,7 @@ ANKLICKBARES
         height: 3rem;
     }
     nav .nav a {
-        font-size: 0.85rem;
+        font-size: 0.65rem !important;
     }
     .arrow {
         font-size: 1rem;

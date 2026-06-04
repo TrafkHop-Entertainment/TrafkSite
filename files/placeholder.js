@@ -14,9 +14,7 @@ function loadComponent(elementId, filePath, callback) {
     .catch(error => console.error('Fehler beim Laden von ' + filePath, error));
 }
 
-loadComponent('header-placeholder', 'files/header.html');
-
-loadComponent('nav-placeholder', 'files/nav.html', () => {
+loadComponent('header-placeholder', 'files/header.html', () => {
     if (typeof initNav === 'function') {
         initNav();
     }

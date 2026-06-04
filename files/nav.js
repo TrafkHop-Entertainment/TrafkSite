@@ -1,5 +1,5 @@
 function initNav() {
-    const navContainer = document.getElementById('sidebar-nav');
+    const navContainer = document.getElementById('header-nav');
     if (!navContainer) return;
 
     fetch('sitemap.xml')
