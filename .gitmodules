@@ -13,3 +13,6 @@
 [submodule "projects/TrafkTux/TrafkTux"]
 	path = projects/TrafkTux/TrafkTux
 	url = git@github.com:TrafkHop-Entertainment/TrafkTux.git
+[submodule "projects/TrafkCalc/TrafkCalc"]
+	path = projects/TrafkCalc/TrafkCalc
+	url = git@github.com:TrafkHop-Entertainment/TrafkCalc.git
