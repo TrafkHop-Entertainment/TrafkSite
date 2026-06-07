@@ -1,0 +1,67 @@
+:root {
+    --Kraft:      #fff495;
+    --Kraft-dark: #ede59f;
+    --Trafk:      #5a3998;
+    --Trafk-dark: #351b67;
+}
+
+#TetraboxIntro {
+    margin-top: 3350px;
+}
+
+#TetraboxIntro h1 a {
+    text-decoration: none;
+}
+
+#membersdiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    max-width: 90%;
+}
+
+#membersdiv img {
+    max-width: 200px;
+}
+
+#membersdiv p {
+    color: var(--Kraft);
+}
+
+#finallogo {
+    background: black;
+    border: 5px solid black;
+    max-width: 400px !important;
+}
+
+#oldlogosdiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-start;
+    max-width: 90%;
+    margin-top: 1rem;
+}
+
+#oldlogosdiv img,
+#oldlogosdiv video {
+    max-width: 220px;
+    height: auto;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+    #membersdiv img {
+        max-width: 120px;
+    }
+    #oldlogosdiv img,
+    #oldlogosdiv video {
+        max-width: 130px;
+    }
+    #finallogo {
+        max-width: 90vw !important;
+    }
+}

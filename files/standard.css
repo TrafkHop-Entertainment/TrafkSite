@@ -21,7 +21,7 @@ Ganze SEITE
     box-sizing: border-box;
 }
 
-p, h1, h2,h3,h4,h5,h6 {
+p, h1, h2,h3,h4,h5,h6, li, ol, ul, li, dl, dt, dd {
     color: var(--Kraftlight);
 }
 footer p, header p {

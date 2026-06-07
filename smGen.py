@@ -7,7 +7,6 @@ base_urls = [
 directory = "."
 allowed_extensions = (".html", ".md", ".txt")
 
-# 1. Hier definieren wir die Liste der Pfade, an denen die Datei gespeichert werden soll
 output_files = ["sitemap.xml", "projects/AskAlfonz/AskAlfonz/sitemap.xml"]
 
 sitemap_lines = [
@@ -17,7 +16,7 @@ sitemap_lines = [
 
 today = datetime.now().strftime("%Y-%m-%d")
 
-print(f"Generiere Sitemap für {len(base_urls)} Basis-URLs...")
+print(f"Generating Sitemap for {len(base_urls)} base URLs:")
 
 found_files = []
 for root, dirs, files in os.walk(directory):
@@ -43,15 +42,15 @@ for base in base_urls:
 
 sitemap_lines.append("</urlset>")
 
-# 2. Wir gehen die Liste der Pfade durch und speichern die Datei an jedem Ort
 content = "\n".join(sitemap_lines)
 
 for path in output_files:
-    # Optional: Sicherstellen, dass der Ordner existiert (falls 'projects/...' noch nicht da ist)
     os.makedirs(os.path.dirname(path), exist_ok=True) if os.path.dirname(path) else None
 
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
-    print(f"Datei erfolgreich gespeichert unter: {path}")
+    print(f"File saved under: {path}")
 
-print(f"Fertig! Insgesamt {len(found_files) * len(base_urls)} Einträge generiert.")
+print(f"Finish! {len(found_files) * len(base_urls)} Entries generated.")
+
+#MADE WITH AI

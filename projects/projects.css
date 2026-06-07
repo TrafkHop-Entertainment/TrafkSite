@@ -1,55 +1,45 @@
-#released, #announced {
-    text-align: center;
-    left: 1%;
-    right: 1%;
+:root {
+    --Kraft:      #fff495;
+    --Kraft-dark: #ede59f;
+    --Trafk:      #5a3998;
+    --Trafk-dark: #351b67;
+}
+main {
+display: flex;}
+#projects {
+    margin-top: 2150px;}
+
+.projectheader {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 2px solid var(--Kraft);
+    padding-bottom: 0.5rem;
 }
 
-#released {
-    top: 12%;
-    bottom: 65%;
+.projectheader h2 {
+    margin-bottom: 0;
+    border-bottom: none;
 }
 
-#H-RSA {
-    left: 3%;
-    right: 3%;
-    top: 35%;
-    bottom: 15%;
+.projectheader .studio-tag {
+    color: var(--Trafk);
+    font-size: 85%;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-#H-TS {
-    left: 3%;
-    right: 3%;
-    top: 85%;
-    bottom: -35%;
-}
-
-#H-TT {
-    left: 3%;
-    right: 3%;
-    top: 135%;
-    bottom: -105%;
-}
-
-#B-shirt {
-    left: 3%;
-    right: 50%;
-    top: 205%;
-    bottom: -155%;
-}
-#B-atom {
-    left: 50%;
-    right: 3%;
-    top: 205%;
-    bottom: -155%;
-}
-
-#announced {
-    top: 255%;
-    bottom: -178%;
+#H-RSA, #H-TS, #H-TT, #B-shirt, #B-atom, #H-AA, #H-TC, #H-SH {
+    border-left: 3px solid var(--Trafk);
+    padding-left: 1.5rem !important;
 }
 
 
-
-#spacer {
-    bottom: -198%;
+@media (max-aspect-ratio: 1/1) {
+    .projectheader {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
 }

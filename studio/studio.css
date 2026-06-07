@@ -1,7 +1,3 @@
-/*
-Farben
-*/
-
 :root {
     --Kraft:      #fff495;
     --Kraft-dark: #ede59f;
@@ -9,55 +5,60 @@ Farben
     --Trafk-dark: #351b67;
 }
 
-/*
-Important Stuff
-*/
-
-
-* {
-    margin: 0;
-    padding: 0;
-}
-body {
-    background-color: black;
-    color: white;
+#StudioLogo {
+    align-items: center;
+    margin-top: 2850px;
 }
 
-main::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-
-    background-image: url("/SourceHop-Notes/assets/SourceHop-Images/ModelsJourney/13WorldsBG3.png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-position-y: -5rem;
-    background-size: contain;
-
-    /*Parallax Effekt*/
-    transform: translateZ(-65px) scale(4);
-    transform-origin: top center;
-    z-index: -1;
+#StudioLogo #studio {
+    max-width: 600px;
 }
-/*
-Main
-*/
 
-#Logosetc {
-display: flex;
-flex-direction: column;
-gap: 5rem;
+#links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
-#Logosetc img {
-    height: 18rem;
-    width: auto;
+
+#links a {
+    text-decoration: none;
+    color: var(--Kraft);
+    width: fit-content;
 }
-.logosetc {
-display: flex;
-flex-direction: row;
-gap: 5rem;
-align-items: center;
-justify-content: flex-start;
-overflow-x: scroll;
-width: 80%;
+
+#links h2 {
+    margin-top: 1rem;
+}
+
+#logosgrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    max-width: 90%;
+}
+
+#logosgrid img {
+    max-width: 285px;
+}
+
+.identity {
+    color: orange !important;
+    font-size: 120% !important;
+}
+
+#inspiration p,
+#history p {
+    margin-bottom: 0.4rem;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+    #StudioLogo #studio {
+        max-width: 90vw;
+    }
+    #logosgrid img {
+        max-width: 130px;
+    }
 }

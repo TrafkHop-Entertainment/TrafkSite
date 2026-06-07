@@ -1,119 +1,154 @@
 :root {
---orange: #ed9121;
---orange-dark: #c87a1c;
---lightorange: #ffc37a;
---lightorange-dark: #d6a466;
---darkorange: #cc770f;
---darkorange-dark: #a35f0c;
+    --Kraft:      #fff495;
+    --Kraft-dark: #ede59f;
+    --Trafk:      #5a3998;
+    --Trafk-dark: #351b67;
+}
+
+#personaldatapublic {
+margin-top: 12000px;}
+
+/* Lists with h3 inside */
+ul li h3, ol li h3 {
+    display: inline;
+    font-size: 100%;
+    color: var(--Kraft-dark);
+}
+
+/* Carrot orange colour display */
+#carrot-orange {
+    color: #ed9121 !important;
+    font-size: 135% !important;
+}
+
+/* Archive of old profile pics */
+#oldpicsdiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-start;
+    max-width: 90%;
+    margin-top: 1rem;
+}
+
+#oldpicsdiv img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Food grid */
+#foodgrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-start;
+    max-width: 90%;
+}
+
+#foodgrid img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Cars */
+#cars ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
+}
+
+#cars ol li {
+    margin-bottom: 1.5rem;
+}
+
+#cars ol li h2 {
+    border-bottom: none;
+    margin-bottom: 0.5rem;
+}
+
+/* Games list */
+#gameslist {
+    list-style: decimal;
+    padding-left: 1.5rem;
+}
+
+#gameslist li {
+    margin-bottom: 1rem;
+}
+
+.gamemedia {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+}
+
+.gamemedia img {
+    max-width: 200px !important;
+}
+
+.gamemedia iframe {
+    width: 320px;
+    height: 180px;
+    border: 3px solid var(--Trafk);
+    border-radius: 0.5rem;
+}
+
+section iframe {
+    width: 320px;
+    height: 180px;
+    border: 3px solid var(--Trafk);
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#findsdiv {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+}
+
+#findsdiv img {
+    max-width: 180px;
+}
+
+/* Arch Linux note */
+.archbtw {
+    color: orange !important;
+    font-size: 90% !important;
+}
+
+/* Hours section */
+#hours h2 {
+    border-bottom: none;
+    margin-bottom: 0.2rem;
+    margin-top: 0.75rem;
+    color: var(--Kraft-dark);
 }
 
 
-
-header {
-    background: var(--orange);
-    filter: drop-shadow(0px 3px 7px var(--orange-dark)) drop-shadow(0px 3px 7px var(--orange-dark));
-    justify-content: center;
-    padding-left: 35px;
-}
-section {
-    background: var(--lightorange);
-    filter: drop-shadow(0px 3px 3px var(--lightorange-dark)) drop-shadow(0px 3px 3px var(--lightorange-dark));
-}
-header h1 {
-    padding-left: 26%;
-    font-size: 65px;
-    transition: translate 2s ease-in-out, scale !important;
-    color: black !important;
-}
-header h1:hover {
-    translate: 300% !important;
-    scale: 1 !important;
-}
-nav {
-    background: var(--lightorange);
-    filter: drop-shadow(3px 0px 7px var(--lightorange-dark)) drop-shadow(3px 0px 7px var(--lightorange-dark));
-}
-footer {
-    background: var(--orange);
-    filter: drop-shadow(0px -3px 7px var(--orange-dark)) drop-shadow(0px -3px 7px var(--orange-dark));
-}
-.acrlogo {
-     width: 85px !important;
-     height: 85px !important;
-     min-width: auto !important;
-     transition: rotate 60s ease-in-out , scale 60s ease-in-out !important;
-}
-
-#profile-picture img {
-    max-width: 100%;;
-    max-height: 100%;
-}
-#profile-picture img.acrlogo {
-   min-width: 250px !important;
-   min-height: 250px !important;
-}
-
-.acrlogo:hover {
-    rotate: -499680deg !important;
-    scale: 1.35 !important;
-}
-.header {
-    background: var(--orange);
-    filter: drop-shadow(0px 3px 3px var(--orange-dark)) drop-shadow(0px 3px 3px var(--orange-dark));
-}
-#OS img {
-    max-width: 850px;
-}
-#OS {
-    max-width: 65%;
-    max-height: fit-content;
-}
-
-@media (max-width: 1080px) {
-    header h1 {
-        font-size: 15px;
+@media (max-aspect-ratio: 1/1) {
+    #oldpicsdiv img {
+        max-width: 90px;
     }
-    header .acrlogo {
-        width: 45px !important;
-        height: 45px !important;
+    #foodgrid img {
+        max-width: 130px;
     }
-    #profile-picture img {
-        width: 135px !important;
-        height: 135px !important;
+    .gamemedia img {
+        max-width: 130px !important;
     }
-    #OS img {
-    max-width: 400px;
+    .gamemedia iframe,
+    section iframe {
+        width: 240px;
+        height: 135px;
     }
-    #OS {
-    max-width: 85%;
-    }
-}
-
-html:has(#darkmode:checked) {
-    header {
-        background: var(--darkorange);
-        filter: drop-shadow(0px 3px 7px var(--darkorange-dark)) drop-shadow(0px 3px 7px var(--darkorange-dark));
-    }
-    header h1, footer {
-        color: white !important;
-    }
-
-    section {
-        background: var(--orange);
-        filter: drop-shadow(0px 3px 3px var(--orange-dark)) drop-shadow(0px 3px 3px var(--orange-dark));
-    }
-
-    nav {
-        background: var(--orange);
-        filter: drop-shadow(3px 0px 7px var(--orange-dark)) drop-shadow(3px 0px 7px var(--orange-dark));
-    }
-    footer {
-        background: var(--darkorange);
-        filter: drop-shadow(0px -3px 7px var(--darkorange-dark)) drop-shadow(0px -3px 7px var(--darkorange-dark));
-    }
-
-    .header {
-        background: var(--darkorange);
-        filter: drop-shadow(0px 3px 3px var(--darkorange-dark)) drop-shadow(0px 3px 3px var(--darkorange-dark));
+    #findsdiv img {
+        max-width: 120px;
     }
 }

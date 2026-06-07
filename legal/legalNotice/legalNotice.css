@@ -1,27 +1,33 @@
-* {
-text-align: center;
+:root {
+    --Kraft:      #fff495;
+    --Kraft-dark: #ede59f;
+    --Trafk:      #5a3998;
+    --Trafk-dark: #351b67;
+}
+
+#impressum h2 {
+    font-size: 95%;
+    color: orange;
+    border-bottom: none;
+    margin-bottom: 1.5rem;
+}
+
+section h3 {
+    color: var(--Kraft-dark);
+    margin-top: 1.25rem;
+    margin-bottom: 0.4rem;
+    font-size: 105%;
+}
+
+section p, section a {
+    margin-bottom: 0.5rem;
+}
+
+#impressum, #medienrecht, #haftung {
+    border-left: 3px solid var(--Trafk);
+    padding-left: 1.5rem !important;
 }
 
 #impressum {
-    top: 12%;
-    left: 3%;
-    right: 3%;
-    bottom: 21%;
-}
-
-#medienrecht{
-    top: 78%;
-    left: 3%;
-    right: 3%;
-    bottom: -10%;
-}
-#haftung{
-    top: 108%;
-    left: 3%;
-    right: 3%;
-    bottom: -48%;
-}
-
-#spacer {
-    bottom: -61%;
+    margin-top: 1000px;
 }

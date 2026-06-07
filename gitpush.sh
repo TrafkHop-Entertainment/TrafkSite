@@ -1,25 +1,22 @@
 #!/bin/bash
 
-# ─── Commit-Nachricht ────────────────────────────────────────────────────────
 if [ $# -ge 1 ]; then
   commit_msg="$1"
 else
-  read -p "Commit Nachricht: " commit_msg
+  read -p "Commit Message: " commit_msg
 fi
 
 if [ -z "$commit_msg" ]; then
-  echo "Fehler: Leer darfs auch nich sein, ja!."
+  echo "ERROR: ¯\_(ツ)_/¯"
   exit 1
 fi
 
 export commit_msg
 
-# ─── Hilfsfunktion: ein einzelnes Repo committen & pushen ────────────────────
 commit_and_push() {
   local dir="$1"
   cd "$dir" || return 1
 
-  # Auf main/master wechseln
   git checkout main 2>/dev/null || git checkout master 2>/dev/null
 
   git add -A
@@ -33,8 +30,6 @@ commit_and_push() {
 
 export -f commit_and_push
 
-# ─── Tiefe zuerst: alle Submodule von innen nach außen ──────────────────────
-# git submodule foreach gibt Pfade von außen nach innen aus → umkehren
 mapfile -t submodule_paths < <(
   git submodule foreach --recursive --quiet 'echo "$displaypath"' 2>/dev/null \
   | awk '{ print NR, $0 }' \
@@ -50,8 +45,7 @@ for rel_path in "${submodule_paths[@]}"; do
   cd "$ROOT_DIR"
 done
 
-# ─── Root-Repo zuletzt ───────────────────────────────────────────────────────
-echo "→ Root-Repo"
+echo "TrafkSite Repo;"
 cd "$ROOT_DIR"
 git add -A
 
@@ -62,6 +56,5 @@ fi
 git push --recurse-submodules=on-demand
 
 echo ""
-echo "✓ Fertig."
+echo "Upload complete (⌐■_■)"
 
-# Made with ai
