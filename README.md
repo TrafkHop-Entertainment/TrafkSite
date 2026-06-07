@@ -1,6 +1,7 @@
-This Github Repo is READ ONLY. More in the Licsene!
+Copyright © 2026 TrafkHop Entertainment™
+All rights reserved.
 
-Trafkhop Entertainment™ Website:
+# TrafkSite
 
 Hi, that's the website for our game studio.
 We're still in development of this site,
