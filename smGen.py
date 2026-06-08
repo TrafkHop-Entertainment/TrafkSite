@@ -5,7 +5,27 @@ base_urls = [
     "https://trafkhop-entertainment.github.io/TrafkSite/"
 ]
 directory = "."
-allowed_extensions = (".html", ".md", ".txt", ".css", ".c", "", ".js", ".py", ".xml", ".sh")
+
+allowed_extensions = (
+    ".html", ".md", ".txt",
+    ".css", ".js", ".ts",
+    ".c", ".cpp", ".h", ".hpp",
+    ".py", ".xml", ".sh", ".json",
+    ".yaml", ".yml", ".cmake", ".toml",
+)
+
+SKIP_FOLDERS = {
+    ".git",
+    # RSA games folder — too large, full game files
+    "games",  # only within RSA path, enforced below
+}
+
+# Path substrings that always get skipped regardless of depth
+SKIP_PATH_SUBSTRINGS = [
+    "raufbold3bs-scratch-archive/raufbold3bs-scratch-archive/games/",
+    "/.git/",
+    "\\.git\\",
+]
 
 output_files = ["sitemap.xml", "projects/AskAlfonz/AskAlfonz/sitemap.xml"]
 
@@ -18,14 +38,49 @@ today = datetime.now().strftime("%Y-%m-%d")
 
 print(f"Generating Sitemap for {len(base_urls)} base URLs:")
 
+def should_skip_path(path_str):
+    normalized = path_str.replace("\\", "/").lower()
+    if "/.git/" in normalized or normalized.startswith(".git/"):
+        return True
+    if "raufbold3bs-scratch-archive/raufbold3bs-scratch-archive/games/" in normalized:
+        return True
+    return False
+
+def get_priority(url_path):
+
+    p = url_path.lower()
+
+    if "/backups/" in p or "/backup/" in p or "/old/" in p:
+        return "0.10"
+
+    if "/gameideas/" in p or "/game-ideas/" in p or "/game_ideas/" in p:
+        return "0.45"
+
+    code_exts = (".js", ".ts", ".py", ".css", ".c", ".cpp", ".h", ".hpp",
+                 ".sh", ".cmake", ".toml", ".yaml", ".yml", ".json", ".xml")
+    if any(p.endswith(ext) for ext in code_exts):
+        return "0.65"
+
+    # ── Default
+    return "0.85"
+
 found_files = []
 for root, dirs, files in os.walk(directory):
+    dirs[:] = [d for d in dirs if d != ".git"]
+
     for filename in files:
-        if filename.endswith(allowed_extensions):
-            rel_path = os.path.relpath(os.path.join(root, filename), directory)
-            url_path = rel_path.replace("\\", "/")
-            if url_path.endswith("index.html"):
-                url_path = url_path[:-10]
+        rel_path = os.path.relpath(os.path.join(root, filename), directory)
+        url_path = rel_path.replace("\\", "/")
+
+        if should_skip_path(url_path):
+            continue
+
+        if url_path in [p.replace("\\", "/") for p in output_files]:
+            continue
+
+        name, ext = os.path.splitext(filename)
+
+        if ext.lower() in allowed_extensions or ext == "":
             found_files.append(url_path)
 
 for base in base_urls:
@@ -34,10 +89,11 @@ for base in base_urls:
 
     for file_path in found_files:
         loc = (base + file_path).replace("&", "&amp;")
+        priority = get_priority(file_path)
         sitemap_lines.append("  <url>")
         sitemap_lines.append(f"    <loc>{loc}</loc>")
         sitemap_lines.append(f"    <lastmod>{today}</lastmod>")
-        sitemap_lines.append("    <priority>0.80</priority>")
+        sitemap_lines.append(f"    <priority>{priority}</priority>")
         sitemap_lines.append("  </url>")
 
 sitemap_lines.append("</urlset>")
