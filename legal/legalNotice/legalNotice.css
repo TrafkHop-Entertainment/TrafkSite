@@ -23,11 +23,6 @@ section p, section a {
     margin-bottom: 0.5rem;
 }
 
-#impressum, #medienrecht, #haftung {
-    border-left: 3px solid var(--Trafk);
-    padding-left: 1.5rem !important;
-}
-
 #impressum {
     margin-top: 1000px;
 }

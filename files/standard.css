@@ -81,7 +81,43 @@ section {
     padding:3rem;
     padding-bottom: 5rem !important;
     margin-bottom: 85px;
+    padding-left: 1.5rem !important;
+    position: relative;
 }
+
+section::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -25px;
+    width: 15%;
+    height: 100%;
+    background-image: url("https://trafkhop-entertainment.github.io/TrafkSite/SourceHop-Notes/assets/SourceHop-Images/ModelsJourney/TrafkBubbleNEWEST.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 100% 85%;
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.99) 0%, transparent 100%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,0.99) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+section::after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: -25px;
+    width: 15%;
+    height: 100%;
+    background-image: url("https://trafkhop-entertainment.github.io/TrafkSite/SourceHop-Notes/assets/SourceHop-Images/ModelsJourney/TrafkBubbleNEWEST.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 100% 85%;
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.99) 0%, transparent 100%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.99) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
 
 /*
 Die TRAFKBLASEN navs

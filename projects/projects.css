@@ -31,11 +31,6 @@ display: flex;}
     flex-shrink: 0;
 }
 
-#H-RSA, #H-TS, #H-TT, #B-shirt, #B-atom, #H-AA, #H-TC, #H-SH {
-    border-left: 3px solid var(--Trafk);
-    padding-left: 1.5rem !important;
-}
-
 
 @media (max-aspect-ratio: 1/1) {
     .projectheader {

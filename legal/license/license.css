@@ -17,15 +17,3 @@
 section p {
     line-height: 1.6;
 }
-
-#openSourceNotice, #codeAndSoftware, #creativeContentAndIntellectualProperty,
-#rasassetuse, #contentCreationAndMonitisation, #commertialUse,
-#LicenseUpdates, #reservationOfRights {
-    border-left: 3px solid var(--Trafk);
-    padding-left: 1.5rem !important;
-}
-
-#spacer p {
-    color: var(--Trafk);
-    font-size: 75%;
-}
