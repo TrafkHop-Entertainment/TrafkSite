@@ -148,7 +148,9 @@ Die TRAFKBLASEN navs
     position: relative;
     overflow: hidden;
 }
-.nav > video.nav-bubble-video {
+.nav > video.nav-bubble-video,
+.nav > canvas.nav-bubble-video,
+.nav > canvas.nav-bubble-video-hover {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
@@ -157,11 +159,12 @@ Die TRAFKBLASEN navs
     pointer-events: none;
     z-index: 0;
 }
-.nav > * {
+.nav > *:not(canvas) {
     position: relative;
     z-index: 1;
 }
-.nav:hover > video.nav-bubble-video {
+.nav:hover > video.nav-bubble-video,
+.nav:hover > canvas.nav-bubble-video {
     display: none;
 }
 .nav a {
@@ -169,6 +172,7 @@ Die TRAFKBLASEN navs
     color: white;
     font-size: 0.55rem;
 }
+
 
 /*
 HEADER
