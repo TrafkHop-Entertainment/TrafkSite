@@ -1,4 +1,4 @@
-const BUBBLE_VIDEO = "SourceHop-Notes/assets/SourceHop-Images/ModelsJourney/TrafkBubbleNEWEST-animation30.webm";
+const BUBBLE_VIDEO = "SourceHop-Notes/assets/SourceHop-Images/ModelsJourney/TrafkBubbleNEWEST-animation60.webm";
 
 function makeBubbleVideo() {
     const v = document.createElement('video');
