@@ -164,12 +164,6 @@ Die TRAFKBLASEN navs
 .nav:hover > video.nav-bubble-video {
     display: none;
 }
-.nav:hover {
-    background-image: url("https://trafkhop-entertainment.github.io/TrafkSite/SourceHop-Notes/assets/SourceHop-Images/ModelsJourney/TrafkBubbleLighterNEWEST.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
 .nav a {
     text-decoration: none;
     color: white;
