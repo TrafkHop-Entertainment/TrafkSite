@@ -92,6 +92,10 @@ function initNav() {
             const bubble = document.createElement('div');
             bubble.className = 'nav';
 
+            if (typeof makeBubbleVideo === 'function') {
+                bubble.appendChild(makeBubbleVideo());
+            }
+
             const link = document.createElement('a');
             link.className = 'do';
             link.href = n.path || '#';
