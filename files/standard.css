@@ -85,48 +85,29 @@ section {
     position: relative;
 }
 
-section::before {
-    content: "";
-    position: absolute;
-    top: -15px;
-    left: -25px;
-    width: 15%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-section::after {
-    content: "";
-    position: absolute;
-    top: -15px;
-    right: -25px;
-    width: 15%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-
-/* Video-Ersatz für section::before / ::after */
-section > .bubble-video-left,
-section > .bubble-video-right {
+section > .TrafkSectionBubble {
     position: absolute;
     top: -15px;
     bottom: -15px;
-    width: 15%;
-    height: calc(100% + 30px);
+    width: auto;
+    height: calc(100%);
     pointer-events: none;
     z-index: -1;
     object-fit: fill;
 }
-section > .bubble-video-left {
-    left: -25px;
+section > .TrafkSectionBubble {
+    left: calc(-215px + 22cqw - 25cqh);
     -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.99) 0%, transparent 100%);
-    mask-image: linear-gradient(to right, rgba(0,0,0,0.99) 0%, transparent 50%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,0.99) 0%, transparent 85%);
 }
-section > .bubble-video-right {
-    right: -25px;
-    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.99) 0%, transparent 100%);
-    mask-image: linear-gradient(to left, rgba(0,0,0,0.99) 0%, transparent 50%);
+section.nobubble > .TrafkSectionBubble {
+    display: none;
+}
+section > .TrafkSectionBubble.tall-container {
+    left: calc(-265px + 22cqw - 25cqh);
+}
+section > .TrafkSectionBubble.taller-container {
+    left: calc(-215px + 18cqw - 35cqh);
 }
 
 

@@ -105,7 +105,7 @@ function injectNavVideos(root = document) {
 
 function injectSectionVideos(root = document) {
     root.querySelectorAll('section').forEach(el => {
-        if (el.querySelector('canvas.bubble-video-left')) return;
+        if (el.querySelector('canvas.TrafkSectionBubble')) return;
 
         // Section-Canvas braucht andere Positionierung als nav-Canvas
         function makeSectionCanvas(cls) {
@@ -113,16 +113,22 @@ function injectSectionVideos(root = document) {
             canvas.width  = 320;
             canvas.height = 320;
             canvas.className = cls;
-            // Position kommt aus standard.css (.bubble-video-left / -right)
+            // Position kommt aus standard.css (.TrafkSectionBubble / -right)
             canvas.style.cssText = 'pointer-events:none;z-index:-1';
             const ctx   = canvas.getContext('2d', { alpha: true });
             _canvases.push({ canvas, ctx, useHover: false });
             return canvas;
         }
 
-        const left  = makeSectionCanvas('bubble-video-left');
-        const right = makeSectionCanvas('bubble-video-right');
-        el.insertBefore(right, el.firstChild);
+        const left  = makeSectionCanvas('TrafkSectionBubble');
+
+        if (el.offsetHeight > window.innerHeight * 0.35) {
+            left.classList.add('taller-container');
+        }
+        if (el.offsetHeight > window.innerHeight * 0.2) {
+            left.classList.add('tall-container');
+        }
+
         el.insertBefore(left,  el.firstChild);
     });
 }
