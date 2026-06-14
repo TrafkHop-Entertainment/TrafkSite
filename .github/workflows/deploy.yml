@@ -26,7 +26,11 @@ jobs:
           submodules: false
 
       - name: Update all submodules except Code
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config --global url."https://x-access-token:${GITHUB_TOKEN}@github.com/".insteadOf "git@github.com:"
+
           git config submodule."projects/SourceHop/Code".update none
 
           git submodule update --init --recursive
