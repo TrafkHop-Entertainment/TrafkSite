@@ -23,7 +23,13 @@ jobs:
 
       - uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: false
+
+      - name: Update all submodules except Code
+        run: |
+          git config submodule."projects/SourceHop/Code".update none
+
+          git submodule update --init --recursive
 
       - uses: actions/configure-pages@v5
 
