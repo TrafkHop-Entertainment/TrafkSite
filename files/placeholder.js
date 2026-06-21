@@ -1,5 +1,5 @@
-const BUBBLE_VIDEO         = "SourceHop-Notes/assets/SourceHop-Images/ModelsJourney/TrafkBubbleNEWEST-animation60.webm";
-const BUBBLE_VIDEO_LIGHTER = "SourceHop-Notes/assets/SourceHop-Images/ModelsJourney/TrafkBubbleLighterNEWEST-animation60.webm";
+const BUBBLE_VIDEO         = "projects/SourceHop/Images/TrafkSite/TrafkBubbleNEWEST-animation60.webm";
+const BUBBLE_VIDEO_LIGHTER = "projects/SourceHop/Images/TrafkSite/TrafkBubbleLighterNEWEST-animation60.webm";
 
 // ─── Versteckte Master-Videos (nur 1× dekodiert) ─────────────────────────────
 
