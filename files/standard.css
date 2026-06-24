@@ -73,17 +73,19 @@ main img {
 main::before {
     content: "";
     position: absolute;
+    /* WICHTIG: top, left, right UND bottom auf 0, damit es sich aufspannt */
     top: 0; left: 0; right: 0; bottom: 0;
 
     background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: contain;
-    overflow-y: clip;
+    background-size: cover; /* 'cover' ist meist besser als 'contain', um Ränder zu vermeiden */
+    overflow-y: hidden;
 
-    /*Parallax Effekt*/
-    transform: translateZ(-65px) scale(6) translateY(-365px);
-    transform-origin: top center;
+    /* Parallax-Effekt VORERST DEAKTIVIERT zum Testen */
+    /* transform: translateZ(-65px) scale(6) translateY(-365px); */
+    /* transform-origin: top center; */
+
     z-index: -1;
     pointer-events: none;
 }
