@@ -90,6 +90,7 @@ main::before {
     transform-origin: top center;
     z-index: -1;
     pointer-events: none;
+    contain: strict;
 }
 
 
@@ -97,7 +98,7 @@ main {
     position: relative;
     height: 100vh;
     overflow-y: auto;
-    overflow-x: clip;
+    overflow-x: hidden;
     transform-style: preserve-3d;
     perspective: 15px;
     perspective-origin: center;
