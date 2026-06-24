@@ -1,5 +1,5 @@
 /*
- DIE FARBEN
+ * DIE FARBEN
  */
 
 
@@ -12,7 +12,7 @@
 }
 
 /*
- Ganze SEITE
+ * Ganze SEITE
  */
 
 * {
@@ -58,7 +58,7 @@ main {
     align-items: center;
     justify-content: center;
     padding: 5rem;
-    background-color: black;
+    background-color: transparent;
 }
 
 .codeblock {
@@ -80,12 +80,14 @@ main {
     transform-style: preserve-3d;
     perspective: 15px;
     perspective-origin: center;
+    background-color: black;
 }
 
 .parallax-stage::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0; left: 0; right: 0;
+    height: 100vh;
 
     background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
     background-repeat: no-repeat;
@@ -145,7 +147,7 @@ section > .TrafkSectionBubble.taller-container {
 
 
 /*
- Die TRAFKBLASEN navs
+ * Die TRAFKBLASEN navs
  */
 
 .nav {
@@ -188,7 +190,7 @@ section > .TrafkSectionBubble.taller-container {
 
 
 /*
- HEADER
+ * HEADER
  */
 
 header {
@@ -235,7 +237,7 @@ right: 18rem;
 }
 
 /*
- NAVIGATION
+ * NAVIGATION
  */
 
 #header-nav {
@@ -342,7 +344,7 @@ footer #volume {
 
 
 /*
- ANKLICKBARES
+ * ANKLICKBARES
  */
 
 .do {
