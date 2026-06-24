@@ -90,7 +90,7 @@ main::before {
     overflow-y: clip;
 
     /* Dein originaler Parallax-Effekt */
-    transform: translateZ(-65px) scale(6) translateY(-365px);
+    transform: translateZ(-65px) scale(1) translateY(-365px);
     transform-origin: top center;
     z-index: -1;
     pointer-events: none;
