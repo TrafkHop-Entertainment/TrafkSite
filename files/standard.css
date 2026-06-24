@@ -75,8 +75,7 @@ main {
 .parallax-stage {
     position: relative;
     height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: clip;
     transform-style: preserve-3d;
     perspective: 15px;
     perspective-origin: center;
@@ -85,8 +84,7 @@ main {
 .parallax-stage::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 100vh;
+    top: 0; left: 0; right: 0; bottom: 0;
 
     background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
     background-repeat: no-repeat;
@@ -98,7 +96,12 @@ main {
     transform-origin: top center;
     z-index: -1;
     pointer-events: none;
-    will-change: transform;
+}
+
+.parallax-scroll {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 main {
