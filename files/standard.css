@@ -99,6 +99,7 @@ main {
     transform-origin: top center;
     z-index: -1;
     pointer-events: none;
+    contain: layout;
 }
 
 main {
@@ -326,7 +327,9 @@ footer {
     padding-left: 8rem;
     padding-right: 8rem;
     background-color: var(--Kraft);
-    width: 100%;
+    width: calc(100% + 10rem);
+    margin-left: -5rem;
+    margin-right: -5rem;
     height: 4rem;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
