@@ -320,8 +320,7 @@ footer {
     padding-left: 8rem;
     padding-right: 8rem;
     background-color: var(--Kraft);
-    left: 0;
-    right: 0;
+    width: 100vw;
     height: 4rem;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
