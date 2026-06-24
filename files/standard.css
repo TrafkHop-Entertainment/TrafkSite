@@ -76,7 +76,7 @@ main {
 
 main::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
 
     background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
@@ -89,6 +89,7 @@ main::before {
     transform-origin: top center;
     z-index: -1;
 }
+
 
 main {
     position: relative;
@@ -322,7 +323,6 @@ footer {
     left: 0;
     right: 0;
     height: 4rem;
-    width: 100vw;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     z-index: 998;
