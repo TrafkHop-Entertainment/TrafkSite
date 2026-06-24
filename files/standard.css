@@ -21,6 +21,12 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 p, h1, h2,h3,h4,h5,h6, li, ol, ul, li, dl, dt, dd, span, .codeblock {
     color: var(--Kraftlight);
     line-height: 1.85;
@@ -67,7 +73,7 @@ main img {
 main::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
 
     background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
     background-repeat: no-repeat;
@@ -87,7 +93,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    min-height: 100vh;
+    flex: 1;
     overflow-x: hidden;
     align-items: center;
     padding: 5rem;
