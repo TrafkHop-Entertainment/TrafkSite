@@ -53,13 +53,6 @@ main img {
     height: auto;
 }
 
-main {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5rem;
-}
-
 .codeblock {
     display: flex;
     margin: 1rem;
@@ -71,25 +64,16 @@ main {
     border: 5px solid var(--Trafk-dark);
 }
 
-.parallax-stage {
-    position: relative;
-    height: 100vh;
-    overflow: clip;
-    transform-style: preserve-3d;
-    perspective: 15px;
-    perspective-origin: center;
-    background-color: black;
-}
-
-.parallax-stage::before {
+main::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0; left: 0; right: 0;
 
     background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
+    overflow-y: clip;
 
     /*Parallax Effekt*/
     transform: translateZ(-65px) scale(6) translateY(-365px);
@@ -104,8 +88,10 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     min-height: 100vh;
-    overflow-y: auto;
     overflow-x: hidden;
+    align-items: center;
+    padding: 5rem;
+    background-color: transparent;
 }
 
 section {
@@ -325,8 +311,8 @@ footer {
     padding-left: 8rem;
     padding-right: 8rem;
     background-color: var(--Kraft);
-    width: calc(100% + 10rem);
-    margin-left: -5rem;
+    left: 0;
+    right: 0;
     height: 4rem;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
@@ -392,7 +378,7 @@ footer #volume {
         height: auto;
     }
 
-    .parallax-stage::before {
+    main::before {
         transform: translateZ(-65px) scale(9) translateY(-165px);
     }
     p, h1, h2, h3, h4, h5, h6, a, li {
