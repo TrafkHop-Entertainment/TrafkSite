@@ -102,12 +102,10 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    overflow-x: hidden;
     align-items: center;
     padding: 5rem;
     background-color: transparent;
     transform-style: preserve-3d;
-    min-height: 150vh;
 }
 
 section {
