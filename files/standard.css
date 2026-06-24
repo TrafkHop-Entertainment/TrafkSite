@@ -27,7 +27,6 @@ body {
     height: 100%;
     background-color: black;
     margin: 0;
-    perspective: 15px;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -80,23 +79,6 @@ main img {
     border: 5px solid var(--Trafk-dark);
 }
 
-main::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: contain;
-    overflow-y: clip;
-
-    /* Dein originaler Parallax-Effekt */
-    transform: translateZ(-65px) scale(5);
-    transform-origin: top center;
-    z-index: -1;
-    pointer-events: none;
-}
-
 main {
     position: relative;
     display: flex;
@@ -105,7 +87,13 @@ main {
     align-items: center;
     padding: 5rem;
     background-color: transparent;
-    transform-style: preserve-3d;
+    background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    background-attachment: fixed;
+    min-height: 100vh;
+    flex: 0 0 auto;
 }
 
 section {
