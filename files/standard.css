@@ -77,12 +77,14 @@ main {
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: black;
+    transform-style: preserve-3d;
+    perspective: 15px;
+    perspective-origin: center;
 }
 
 .parallax-stage::before {
     content: "";
-    position: fixed;
+    position: absolute;
     top: 0; left: 0; right: 0;
     height: 100vh;
 
@@ -91,11 +93,12 @@ main {
     background-position: center top;
     background-size: contain;
 
-    /*Parallax Effekt - wird per JS gesteuert*/
-    transform: translateY(var(--parallax-y, -200px)) scale(1.15);
+    /*Parallax Effekt*/
+    transform: translateZ(-65px) scale(6) translateY(-365px);
     transform-origin: top center;
     z-index: -1;
     pointer-events: none;
+    will-change: transform;
 }
 
 main {
@@ -323,7 +326,8 @@ footer {
     padding-left: 8rem;
     padding-right: 8rem;
     background-color: var(--Kraft);
-    width: 100%;
+    width: calc(100% + 10rem);
+    margin-left: -5rem;
     height: 4rem;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
@@ -390,7 +394,7 @@ footer #volume {
     }
 
     .parallax-stage::before {
-        transform: translateY(var(--parallax-y, -100px)) scale(1.05);
+        transform: translateZ(-65px) scale(9) translateY(-165px);
     }
     p, h1, h2, h3, h4, h5, h6, a, li {
         font-size: 99% !important;
