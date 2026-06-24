@@ -91,7 +91,7 @@ main::before {
     overflow-y: clip;
 
     /* Dein originaler Parallax-Effekt */
-    transform: translateZ(-365px) scale(5);
+    transform: translateZ(-65px) scale(5);
     transform-origin: top center;
     z-index: -1;
     pointer-events: none;
@@ -195,7 +195,7 @@ section > .TrafkSectionBubble.taller-container {
 header {
     background-color: var(--Kraft);
     display: flex;
-    position: sticky;
+    position: fixed;
     left: 0;
     top: 0;
     right: 0;
