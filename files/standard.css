@@ -394,7 +394,7 @@ footer #volume {
     }
 
     main::before {
-        transform: translateZ(-65px) scale(9) translateY(-165px);
+        transform: translateZ(-65px) scale(2);
     }
     p, h1, h2, h3, h4, h5, h6, a, li {
         font-size: 99% !important;
