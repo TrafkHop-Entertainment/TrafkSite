@@ -421,6 +421,10 @@ ANKLICKBARES
         bottom: -3rem;
         padding-left: 1rem;
         padding-right: 1rem;
+        left: -99vw;
+    }
+    footer:hover {
+        left: 0;
     }
     footer #volume {
         width: 3rem;
