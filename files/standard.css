@@ -1,5 +1,5 @@
 /*
- D *IE FARBEN
+ DIE FARBEN
  */
 
 
@@ -12,7 +12,7 @@
 }
 
 /*
- G *anze SEITE
+ Ganze SEITE
  */
 
 * {
@@ -72,13 +72,20 @@ main {
     border: 5px solid var(--Trafk-dark);
 }
 
+.parallax-stage {
+    position: relative;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform-style: preserve-3d;
+    perspective: 15px;
+    perspective-origin: center;
+}
 
-
-main::before {
+.parallax-stage::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 100vh;
+    top: 0; left: 0; right: 0; bottom: 0;
 
     background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
     background-repeat: no-repeat;
@@ -90,20 +97,14 @@ main::before {
     transform-origin: top center;
     z-index: -1;
     pointer-events: none;
-    contain: strict;
 }
-
 
 main {
     position: relative;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    transform-style: preserve-3d;
-    perspective: 15px;
-    perspective-origin: center;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
+    min-height: 100%;
 }
 
 section {
@@ -144,7 +145,7 @@ section > .TrafkSectionBubble.taller-container {
 
 
 /*
- D *ie TRAFKBLASEN navs
+ Die TRAFKBLASEN navs
  */
 
 .nav {
@@ -187,7 +188,7 @@ section > .TrafkSectionBubble.taller-container {
 
 
 /*
- H *EADER
+ HEADER
  */
 
 header {
@@ -234,7 +235,7 @@ right: 18rem;
 }
 
 /*
- N *AVIGATION
+ NAVIGATION
  */
 
 #header-nav {
@@ -323,7 +324,7 @@ footer {
     padding-left: 8rem;
     padding-right: 8rem;
     background-color: var(--Kraft);
-    width: 100vw;
+    width: 100%;
     height: 4rem;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
@@ -341,7 +342,7 @@ footer #volume {
 
 
 /*
- A *NKLICKBARES
+ ANKLICKBARES
  */
 
 .do {
@@ -389,7 +390,7 @@ footer #volume {
         height: auto;
     }
 
-    main::before {
+    .parallax-stage::before {
         transform: translateZ(-65px) scale(9) translateY(-165px);
     }
     p, h1, h2, h3, h4, h5, h6, a, li {
