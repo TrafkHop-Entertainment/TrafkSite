@@ -5,6 +5,22 @@
     --Trafk-dark: #351b67;
 }
 
+main::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+
+    background-image: url("projects/SourceHop/Images/Studio/TetraBox/bg.png");
+    background-repeat: repeat-y ;
+    background-position: center top;
+    background-size: contain;
+
+    /*Parallax Effekt*/
+    transform: none !important;
+    transform-origin: top center;
+    z-index: -1;
+}
+
 #TetraboxIntro {
     margin-top: 3350px;
 }
