@@ -4,10 +4,8 @@
     --Trafk:      #5a3998;
     --Trafk-dark: #351b67;
 }
-main {display: flex;}
-
-#newest {
-    margin-top: 2500px;
+main {
+    display: flex;
 }
 .newsheader {
     display: flex;

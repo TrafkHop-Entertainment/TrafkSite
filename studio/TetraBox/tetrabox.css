@@ -14,10 +14,6 @@ main::before {
     background-repeat: repeat-y !important;
 }
 
-#TetraboxIntro {
-    margin-top: 3850px;
-}
-
 #TetraboxIntro h1 a {
     text-decoration: none;
 }

@@ -91,9 +91,23 @@ function initNav() {
 
             const bubble = document.createElement('div');
             bubble.className = 'nav';
+            bubble._bubbleInited = true;
 
             if (typeof makeBubbleVideo === 'function') {
                 bubble.appendChild(makeBubbleVideo());
+
+                const defCanvas = bubble.querySelector('.nav-bubble-video');
+                const hovCanvas = bubble.querySelector('.nav-bubble-video-hover');
+                if (defCanvas && hovCanvas) {
+                    bubble.addEventListener('mouseenter', () => {
+                        defCanvas.style.display = 'none';
+                        hovCanvas.style.display = '';
+                    });
+                    bubble.addEventListener('mouseleave', () => {
+                        defCanvas.style.display = '';
+                        hovCanvas.style.display = 'none';
+                    });
+                }
             }
 
             const link = document.createElement('a');

@@ -5,9 +5,8 @@
     --Trafk-dark: #351b67;
 }
 main {
-display: flex;}
-#projects {
-    margin-top: 2150px;}
+    display: flex;
+}
 
 .projectheader {
     display: flex;

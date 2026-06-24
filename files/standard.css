@@ -1,19 +1,19 @@
-/*
- * DIE FARBEN
- */
-
+/* ==========================================================================
+   FARBEN
+   ========================================================================== */
 
 :root {
-    --Kraft:      #fff495;
-    --Kraftlight: #f6f3d5;
-    --Kraft-dark: #ede59f;
-    --Trafk:      #5a3998;
-    --Trafk-dark: #321F54;
+    --Kraft:        #fff495;
+    --Kraftlight:   #f6f3d5;
+    --Kraft-dark:   #ede59f;
+    --Trafk:        #5a3998;
+    --Trafk-dark:   #321F54;
 }
 
-/*
- * Ganze SEITE
- */
+
+/* ==========================================================================
+   RESET / BASIS
+   ========================================================================== */
 
 * {
     padding: 0;
@@ -21,26 +21,28 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: transparent;
+}
+
 body {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100vh;
     background-color: black;
-    margin: 0;
     overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 15px;
-}
-html {
-    background-color: black;
-    overflow: hidden;
-    height: 100%;
 }
 
-p, h1, h2,h3,h4,h5,h6, li, ol, ul, li, dl, dt, dd, span, .codeblock {
+
+/* ==========================================================================
+   TYPOGRAFIE
+   ========================================================================== */
+
+p, h1, h2, h3, h4, h5, h6, li, ol, ul, dl, dt, dd, span, .codeblock {
     color: var(--Kraftlight);
     line-height: 1.85;
 }
+
 footer p, header p {
     color: var(--Trafk-dark);
 }
@@ -50,17 +52,70 @@ h1 {
     border-bottom: 3px solid var(--Kraft);
     line-height: 1.15;
 }
+
 h2 {
-    margin-bottom: 15px;
     margin-top: 35px;
+    margin-bottom: 15px;
     border-bottom: 2px solid var(--Kraft-dark);
     line-height: 1.10;
 }
+
 h3 {
-    margin-bottom: 5px;
     margin-top: 15px;
+    margin-bottom: 5px;
     border-bottom: 1px solid var(--Kraft-dark);
     line-height: 1.05;
+}
+
+.codeblock {
+    display: flex;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: rgba(65, 50, 94, 0.65);
+    border: 5px solid var(--Trafk-dark);
+    border-radius: 15px;
+    white-space: pre-wrap !important;
+    word-break: break-all;
+}
+
+
+/* ==========================================================================
+   HINTERGRUND + PARALLAX
+   Ein fixes Hintergrund-Layer, das via JS (parallax.js) beim Scrollen
+   gedrosselt nach oben verschoben wird. Kein animation-timeline-Trick mehr,
+   da der nicht zuverlässig mit position:fixed zusammenspielt.
+   ========================================================================== */
+
+#parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    pointer-events: none;
+    z-index: -1;
+    will-change: transform;
+}
+
+
+/* ==========================================================================
+   LAYOUT: MAIN / SECTIONS
+   ========================================================================== */
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1 0 auto;
+    padding: 5rem;
+    padding-top: calc(3.5rem + 5rem); /* gleicht die Hoehe des fixen Headers aus */
+    background-color: transparent;
 }
 
 main img {
@@ -69,255 +124,229 @@ main img {
     height: auto;
 }
 
-.codeblock {
-    display: flex;
-    margin: 1rem;
-    background-color: rgba(65, 50, 94, 0.65);
-    padding: 1rem;
-    border-radius: 15px;
-    white-space: pre-wrap !important;
-    word-break: break-all;
-    border: 5px solid var(--Trafk-dark);
-}
-
-main {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 5rem;
-    background-color: transparent;
-    min-height: 100vh;
-    flex: 0 0 auto;
-    transform-style: preserve-3d;
-}
-
-main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: contain;
-    transform: translateZ(-365px) scale(25.33);
-    transform-origin: top center;
-    z-index: -1;
-    pointer-events: none;
-}
-
 section {
+    position: relative;
     display: flex;
     flex-direction: column;
-    padding:3rem;
-    padding-bottom: 5rem !important;
+    padding: 3rem 3rem 5rem 1.5rem !important;
     margin-bottom: 85px;
-    padding-left: 1.5rem !important;
-    position: relative;
 }
 
 section > .TrafkSectionBubble {
     position: absolute;
     top: -15px;
     bottom: -15px;
+    left: calc(-215px + 22cqw - 25cqh);
     width: auto;
-    height: calc(100%);
+    height: 100%;
+    object-fit: fill;
     pointer-events: none;
     z-index: -1;
-    object-fit: fill;
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.99) 0%, transparent 100%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.99) 0%, transparent 85%);
 }
-section > .TrafkSectionBubble {
-    left: calc(-215px + 22cqw - 25cqh);
-    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.99) 0%, transparent 100%);
-    mask-image: linear-gradient(to right, rgba(0,0,0,0.99) 0%, transparent 85%);
-}
-section.nobubble > .TrafkSectionBubble {
-    display: none;
-}
+
 section > .TrafkSectionBubble.tall-container {
     left: calc(-265px + 22cqw - 25cqh);
 }
+
 section > .TrafkSectionBubble.taller-container {
     left: calc(-215px + 18cqw - 35cqh);
 }
 
+section.nobubble > .TrafkSectionBubble {
+    display: none;
+}
 
 
-/*
- * Die TRAFKBLASEN navs
- */
+/* ==========================================================================
+   TRAFKBLASEN-NAV (wiederverwendbarer Bubble-Button)
+   ========================================================================== */
 
 .nav {
+    position: relative;
     width: 2.5rem;
     height: 2.5rem;
-    padding: 0;
-    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: 0.085s ease-in-out;
-    position: relative;
     overflow: hidden;
+    transition: 0.085s ease-in-out;
 }
-.nav > video.nav-bubble-video,
+
 .nav > canvas.nav-bubble-video,
 .nav > canvas.nav-bubble-video-hover {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: contain;
     pointer-events: none;
     z-index: 0;
 }
+
 .nav > *:not(canvas) {
     position: relative;
     z-index: 1;
 }
-.nav:hover > video.nav-bubble-video,
+
 .nav:hover > canvas.nav-bubble-video {
     display: none;
 }
+
 .nav a {
-    text-decoration: none;
     color: white;
     font-size: 0.55rem;
+    text-decoration: none;
+}
+
+.nav a.do,
+.nav a.do:hover {
+    filter: none;
 }
 
 
-/*
- * HEADER
- */
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
 
 header {
-    background-color: var(--Kraft);
-    display: flex;
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
     right: 0;
     height: 3.5rem;
+    display: flex;
     align-items: center;
+    background-color: var(--Kraft);
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     z-index: 999;
 }
 
-#logo {
-height: 2.5rem;
-width: 2.5rem;
-}
 #logoa {
-display: absolute;
-position: fixed;
-left: 2rem;
+    position: fixed;
+    left: 2rem;
+    display: flex;
+}
+
+#logo {
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 header #search {
-    height: 2.5rem;
-    width: 12rem;
-    right: 2rem;
     position: absolute;
+    right: 2rem;
+    width: 12rem;
+    height: 2.5rem;
     border: 5px solid var(--Kraft-dark);
     border-radius: 0.85rem;
 }
+
 header #search.do {
-    color: black
-}
-#trafkverse {
-position: absolute;
-right: 15rem;
-}
-#askAlfonznav {
-position: absolute;
-right: 18rem;
+    color: black;
 }
 
-/*
- * NAVIGATION
- */
+#askAlfonznav {
+    position: absolute;
+    right: 18rem;
+}
+
+#trafkverse {
+    position: absolute;
+    right: 15rem;
+}
+
+
+/* ==========================================================================
+   HEADER-NAVIGATION (Sitemap-Baum)
+   ========================================================================== */
 
 #header-nav {
-position: absolute;
-left: 6.5rem;
-right: 22rem;
-height: 100%;
-display: flex;
-align-items: center;
-background: transparent !important;
-box-shadow: none !important;
-padding: 0 !important;
-overflow-x: scroll !important;
-overflow-y: hidden !important;
+    position: absolute;
+    left: 6.5rem;
+    right: 22rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 #header-nav .tree-ul {
-display: none;
-list-style: none;
-padding: 0;
-margin: 0;
-flex-direction: row;
-align-items: center;
-gap: 0.5rem;
-background: transparent !important;
-box-shadow: none !important;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 #header-nav .tree-ul.root-ul {
-display: flex;
-width: max-content;
+    display: flex;
+    width: max-content;
 }
 
 #header-nav .tree-ul.open {
-display: flex;
+    display: flex;
 }
 
 #header-nav .tree-ul:not(.root-ul) {
-margin: 0 0.8rem !important;
-padding: 0 0.6rem !important;
-border-left: 2px dashed rgba(90, 57, 152, 0.3);
-border-right: 2px dashed rgba(90, 57, 152, 0.3);
+    margin: 0 0.8rem !important;
+    padding: 0 0.6rem !important;
+    border-left: 2px dashed rgba(90, 57, 152, 0.3);
+    border-right: 2px dashed rgba(90, 57, 152, 0.3);
 }
 
 #header-nav .tree-li {
-list-style: none;
-display: flex;
-flex-direction: row;
-align-items: center;
-flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    list-style: none;
 }
 
 #header-nav .tree-item {
-display: flex;
-flex-direction: row;
-align-items: center;
-gap: 0.2rem;
-margin-bottom: 0 !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.2rem;
+    margin-bottom: 0 !important;
 }
 
 #header-nav li::before {
-content: none !important;
+    content: none !important;
 }
 
 #header-nav .arrow {
-font-size: 0.65rem !important;
-padding: 0.2rem !important;
-color: var(--Trafk) !important;
-cursor: pointer;
-user-select: none;
-transform: rotate(0deg) !important;
-transition: transform 0.2s ease-in-out !important;
+    padding: 0.2rem !important;
+    color: var(--Trafk) !important;
+    font-size: 0.65rem !important;
+    cursor: pointer;
+    user-select: none;
+    transform: rotate(0deg) !important;
+    transition: transform 0.2s ease-in-out !important;
 }
 
 #header-nav .arrow.open {
-transform: rotate(90deg) !important;
-color: var(--Trafk-dark) !important;
+    color: var(--Trafk-dark) !important;
+    transform: rotate(90deg) !important;
 }
+
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 
 footer {
     position: relative;
@@ -325,20 +354,19 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    height: 4rem;
     padding-left: 8rem;
     padding-right: 8rem;
     background-color: var(--Kraft);
-    left: 0;
-    right: 0;
-    height: 4rem;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     z-index: 998;
 }
+
 #fleft {
-display: flex;
-gap: 1rem;
-flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }
 
 footer #volume {
@@ -346,115 +374,127 @@ footer #volume {
 }
 
 
-/*
- * ANKLICKBARES
- */
+/* ==========================================================================
+   ANKLICKBARES / TEXT-EFFEKTE
+   ========================================================================== */
 
 .do {
-    filter: drop-shadow(0px 0px 2px var(--Kraft)) drop-shadow(0px 0px 5px var(--Kraft));
-    color: var(--Kraft);
     padding-left: 5px;
     padding-right: 5px;
+    color: var(--Kraft);
+    filter: drop-shadow(0px 0px 2px var(--Kraft)) drop-shadow(0px 0px 5px var(--Kraft));
     transition: 0.085s ease-in-out;
 }
+
 .do:hover {
     filter: drop-shadow(0px 0px 3px var(--Kraft-dark)) drop-shadow(0px 0px 8px var(--Kraft-dark));
 }
 
 .glow {
-    filter: drop-shadow(0px 0px 0px var(--Kraft-dark)) drop-shadow(0px 0px 1px var(--Kraft-dark));
-    font-weight: bolder;
     color: var(--Kraft-dark);
+    font-weight: bolder;
+    filter: drop-shadow(0px 0px 0px var(--Kraft-dark)) drop-shadow(0px 0px 1px var(--Kraft-dark));
 }
 
 
+/* ==========================================================================
+   RESPONSIVE: SCHMALE / HOCHFORMAT-VIEWPORTS
+   ========================================================================== */
+
 @media (max-aspect-ratio: 1/1) {
-    #header-nav {
-    left: 7rem !important;
-    overflow-x: auto !important;
-    }
-    #header-nav .tree-ul:not(.root-ul) {
-    margin: 0 0.5rem !important;
-    padding: 0 0.3rem !important;
-    gap: 0.4rem;
-    }
-    #header-nav .nav {
-    width: 2rem;
-    height: 2rem;
-    }
-    #header-nav .nav a {
-    font-size: 0.65rem !important;
-    }
-    #header-nav .arrow {
-    font-size: 0.65rem !important;
-    }
 
     main img {
-        display: block;
         max-width: 350px;
-        height: auto;
     }
 
-    main::before {
-        transform: translateZ(-65px) scale(5.33);
-    }
     p, h1, h2, h3, h4, h5, h6, a, li {
         font-size: 99% !important;
+    }
+
+    .codeblock {
+        font-size: 0.65rem;
+    }
+
+    /* Header / Footer */
+    header, footer {
+        height: 4rem;
+    }
+
+    main {
+        padding-top: calc(4rem + 5rem);
+    }
+
+    #logo {
+        width: 3.5rem;
+        height: 3.5rem;
     }
 
     header #search {
         width: 5rem;
     }
-    header, footer {
-        height: 4rem;
-    }
-    header #logo {
-        width: 3.5rem;
-        height: 3.5rem;
-    }
-    .nav {
-        width: 3rem;
-        height: 3rem;
-    }
-    .nav a {
-        font-size: 0.65rem !important;
-    }
-    #trafkverse {
-    right: 8rem;
-    }
+
     #askAlfonznav {
-    right: 12rem;
+        right: 12rem;
     }
+
+    #trafkverse {
+        right: 8rem;
+    }
+
     footer {
         padding-left: 1rem;
         padding-right: 1rem;
     }
-    footer #volume {
-        width: 3rem;
-    }
+
     footer p {
         font-size: 0.65rem;
     }
 
-    nav {
-        width: 8rem;
-        left: -7rem;
+    footer #volume {
+        width: 3rem;
     }
-    nav .nav {
+
+    /* Nav-Bubbles */
+    .nav {
         width: 3rem;
         height: 3rem;
     }
-    nav .nav a {
+
+    .nav a {
         font-size: 0.65rem !important;
     }
-    .arrow {
-        font-size: 1rem;
-        padding: 0.35rem;
+
+    /* Header-Navigation */
+    #header-nav {
+        left: 7rem !important;
+        overflow-x: auto !important;
     }
+
+    #header-nav .tree-ul:not(.root-ul) {
+        margin: 0 0.5rem !important;
+        padding: 0 0.3rem !important;
+        gap: 0.4rem;
+    }
+
+    #header-nav .nav {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    #header-nav .nav a {
+        font-size: 0.65rem !important;
+    }
+
+    #header-nav .arrow {
+        font-size: 0.65rem !important;
+    }
+
+    .arrow {
+        padding: 0.35rem;
+        font-size: 1rem;
+    }
+
     .tree-ul {
         padding-left: 0.35rem;
-    }
-    .codeblock {
-        font-size: 0.65rem;
     }
 }
