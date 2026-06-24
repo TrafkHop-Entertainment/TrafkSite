@@ -90,7 +90,7 @@ main::before {
     overflow-y: clip;
 
     /* Dein originaler Parallax-Effekt */
-    transform: translateZ(-1565px) scale(6);
+    transform: translateZ(-65px) scale(1);
     transform-origin: top center;
     z-index: -1;
     pointer-events: none;
@@ -196,8 +196,7 @@ section > .TrafkSectionBubble.taller-container {
 header {
     background-color: var(--Kraft);
     display: flex;
-    position: sticky; /* <-- HIER von fixed auf sticky ändern */
-    top: 0;           /* <-- WICHTIG: Sagt dem Header, wo er kleben soll */
+    position: fixed;
     left: 0;
     right: 0;
     height: 3.5rem;
@@ -213,7 +212,7 @@ width: 2.5rem;
 }
 #logoa {
 display: flex;
-position: absolute; /* <-- Von fixed auf absolute */
+position: fixed;
 left: 2rem;
 }
 
@@ -221,7 +220,7 @@ header #search {
     height: 2.5rem;
     width: 12rem;
     right: 2rem;
-    position: absolute; /* <-- Von fixed auf absolute */
+    position: fixed;
     border: 5px solid var(--Kraft-dark);
     border-radius: 0.85rem;
 }
@@ -229,11 +228,11 @@ header #search.do {
     color: black
 }
 #trafkverse {
-position: absolute; /* <-- Von fixed auf absolute */
+position: fixed;
 right: 15rem;
 }
 #askAlfonznav {
-position: absolute; /* <-- Von fixed auf absolute */
+position: fixed;
 right: 18rem;
 }
 
