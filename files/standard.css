@@ -319,7 +319,7 @@ footer {
     padding-right: 8rem;
     background-color: var(--Kraft);
     left: -100vw;
-    right: -99vw;
+    right: 99vw;
     bottom: 0;
     height: 4rem;
     border-top-left-radius: 2rem;
