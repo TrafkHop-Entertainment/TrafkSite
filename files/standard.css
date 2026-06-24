@@ -25,6 +25,15 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: black;
+    margin: 0;
+}
+html {
+    background-color: black;
+    perspective: 15px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100%;
 }
 
 p, h1, h2,h3,h4,h5,h6, li, ol, ul, li, dl, dt, dd, span, .codeblock {
@@ -73,19 +82,16 @@ main img {
 main::before {
     content: "";
     position: absolute;
-    /* WICHTIG: top, left, right UND bottom auf 0, damit es sich aufspannt */
     top: 0; left: 0; right: 0; bottom: 0;
-
     background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: cover; /* 'cover' ist meist besser als 'contain', um Ränder zu vermeiden */
-    overflow-y: hidden;
+    background-size: contain;
+    overflow-y: clip;
 
-    /* Parallax-Effekt VORERST DEAKTIVIERT zum Testen */
-    /* transform: translateZ(-65px) scale(6) translateY(-365px); */
-    /* transform-origin: top center; */
-
+    /* Dein originaler Parallax-Effekt */
+    transform: translateZ(-65px) scale(6) translateY(-365px);
+    transform-origin: top center;
     z-index: -1;
     pointer-events: none;
 }
@@ -100,6 +106,7 @@ main {
     align-items: center;
     padding: 5rem;
     background-color: transparent;
+    transform-style: preserve-3d;
 }
 
 section {
