@@ -79,7 +79,7 @@ main::before {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
 
-    background-image: url("projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
+    background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
@@ -318,13 +318,16 @@ footer {
     padding-left: 8rem;
     padding-right: 8rem;
     background-color: var(--Kraft);
-    left: 0;
+    left: -100vw;
     right: 0;
     bottom: 0;
     height: 4rem;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     z-index: 998;
+}
+footer:hover {
+    left: 0;
 }
 
 #fleft {
@@ -418,13 +421,8 @@ ANKLICKBARES
         right: 12rem;
     }
     footer {
-        bottom: -3rem;
         padding-left: 1rem;
         padding-right: 1rem;
-        left: -99vw;
-    }
-    footer:hover {
-        left: 0;
     }
     footer #volume {
         width: 3rem;
