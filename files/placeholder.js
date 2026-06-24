@@ -161,21 +161,4 @@ document.addEventListener('DOMContentLoaded', () => {
     injectSectionVideos();
 });
 
-// ─── Parallax Scroll ──────────────────────────────────────────────────────────
-
-document.addEventListener('DOMContentLoaded', () => {
-    const stage = document.querySelector('.parallax-stage');
-    if (!stage) return;
-
-    const updateParallax = () => {
-        const scrollY = stage.scrollTop;
-        // Bild scrollt halb so schnell wie der Content → Parallax-Effekt
-        const offset = -200 + scrollY * -0.4;
-        document.documentElement.style.setProperty('--parallax-y', offset + 'px');
-    };
-
-    stage.addEventListener('scroll', updateParallax, { passive: true });
-    updateParallax();
-});
-
 /*Made with AI*/
