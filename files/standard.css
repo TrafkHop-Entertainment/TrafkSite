@@ -87,13 +87,27 @@ main {
     align-items: center;
     padding: 5rem;
     background-color: transparent;
+    min-height: 100vh;
+    flex: 0 0 auto;
+    transform-style: preserve-3d;
+    perspective: 15px;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url("../projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
-    background-attachment: fixed;
-    min-height: 100vh;
-    flex: 0 0 auto;
+    transform: translateZ(-365px) scale(25.33);
+    transform-origin: top center;
+    z-index: -1;
+    pointer-events: none;
 }
 
 section {
@@ -382,7 +396,7 @@ footer #volume {
     }
 
     main::before {
-        transform: translateZ(-65px) scale(2);
+        transform: translateZ(-65px) scale(5.33);
     }
     p, h1, h2, h3, h4, h5, h6, a, li {
         font-size: 99% !important;
