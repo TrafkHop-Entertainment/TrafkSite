@@ -99,6 +99,7 @@ main {
     perspective: 15px;
     perspective-origin: center;
     display: flex;
+    justify-content: flex-start;
 }
 
 section {
