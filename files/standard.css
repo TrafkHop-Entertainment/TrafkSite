@@ -310,7 +310,7 @@ NAVIGATION
 }
 
 footer {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -318,19 +318,14 @@ footer {
     padding-left: 8rem;
     padding-right: 8rem;
     background-color: var(--Kraft);
-    left: -100vw;
-    right: 99vw;
-    bottom: 0;
+    left: 0;
+    right: 0;
     height: 4rem;
+    width: 100%;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     z-index: 998;
 }
-footer:hover {
-    left: 0;
-    right: 0;
-}
-
 #fleft {
     display: flex;
     gap: 1rem;
