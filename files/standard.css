@@ -310,7 +310,7 @@ NAVIGATION
 }
 
 footer {
-    position: fixed;
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -318,13 +318,11 @@ footer {
     padding-left: 8rem;
     padding-right: 8rem;
     background-color: var(--Kraft);
-    bottom: -3.55rem;
     left: 0;
     right: 0;
     height: 4rem;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
-    transition: bottom 0.15s ease-in-out;
     z-index: 998;
 }
 
@@ -332,10 +330,6 @@ footer {
     display: flex;
     gap: 1rem;
     flex-direction: row;
-}
-
-footer:hover {
-    bottom: 0;
 }
 
 footer #volume {
