@@ -1,0 +1,30 @@
+#trafksiteLogo {
+    max-width: 450px;
+}
+
+#History {
+    max-width: 85%;
+}
+
+#historygallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-start;
+    max-width: 100%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+#historygallery img {
+    max-width: 220px;
+    height: auto;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+    #historygallery img {
+        max-width: 130px;
+    }
+}

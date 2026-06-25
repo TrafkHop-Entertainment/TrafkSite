@@ -5,12 +5,6 @@
     --Trafk-dark: #351b67;
 }
 
-/* #parallax-bg: Tetrabox hat eine eigene, vertikal kachelnde Hintergrundtextur
-   statt des globalen Cover-Bilds aus standard.css. Ersetzt die alte
-   main::before-Lösung (die nie wirklich "parallaxte", nur normal mitscrollte) -
-   jetzt läuft der Hintergrund über dasselbe fixed-position #parallax-bg wie
-   auf den anderen Seiten, nur mit eigenem Bild/Tiling. Den eigentlichen
-   Bewegungs-Effekt übernimmt studio/TetraBox/parallax.js. */
 #parallax-bg {
     background-image: url("../../projects/SourceHop/Images/Studio/TetraBox/site/bg.png");
     background-repeat: repeat;
