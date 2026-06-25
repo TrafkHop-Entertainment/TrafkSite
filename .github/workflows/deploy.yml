@@ -32,6 +32,7 @@ jobs:
           git config --global url."https://x-access-token:${GITHUB_TOKEN}@github.com/".insteadOf "git@github.com:"
 
           git config submodule."projects/SourceHop/Code".update none
+          git config submodule."projects/SourceHop/Notes".update none
 
           git submodule update --init --recursive
 
