@@ -1,36 +1,36 @@
-[submodule "projects/AskAlfonz/AlfonzProxy"]
-	path = projects/AskAlfonz/AlfonzProxy
+[submodule "Projects/AskAlfonz/AlfonzProxy"]
+	path = Projects/AskAlfonz/AlfonzProxy
 	url = git@hf.co:spaces/TrafkHop-Entertainment/AlfonzProxy
-[submodule "projects/AskAlfonz/AskAlfonz"]
-	path = projects/AskAlfonz/AskAlfonz
+[submodule "Projects/AskAlfonz/AskAlfonz"]
+	path = Projects/AskAlfonz/AskAlfonz
 	url = git@github.com:TrafkHop-Entertainment/AskAlfonz.git
-[submodule "projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive"]
-	path = projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive
+[submodule "Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive"]
+	path = Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive
 	url = git@github.com:TrafkHop-Entertainment/Raufbold3bs-Scratch-Archive.git
-[submodule "projects/TrafkTux/TrafkTux"]
-	path = projects/TrafkTux/TrafkTux
+[submodule "Projects/TrafkTux/TrafkTux"]
+	path = Projects/TrafkTux/TrafkTux
 	url = git@github.com:TrafkHop-Entertainment/TrafkTux.git
-[submodule "projects/TrafkCalc/TrafkCalc"]
-	path = projects/TrafkCalc/TrafkCalc
+[submodule "Projects/TrafkCalc/TrafkCalc"]
+	path = Projects/TrafkCalc/TrafkCalc
 	url = git@github.com:TrafkHop-Entertainment/TrafkCalc.git
-[submodule "projects/SourceHop/Notes"]
-	path = projects/SourceHop/Notes
+[submodule "Projects/SourceHop/Notes"]
+	path = Projects/SourceHop/Notes
 	url = git@github.com:TrafkHop-Entertainment/SourceHop-Notes.git
-[submodule "projects/SourceHop/Audios"]
-	path = projects/SourceHop/Audios
+[submodule "Projects/SourceHop/Audios"]
+	path = Projects/SourceHop/Audios
 	url = git@github.com:TrafkHop-Entertainment/SourceHop-Audios.git
-[submodule "projects/SourceHop/Documents"]
-	path = projects/SourceHop/Documents
+[submodule "Projects/SourceHop/Documents"]
+	path = Projects/SourceHop/Documents
 	url = git@github.com:TrafkHop-Entertainment/SourceHop-Documents.git
-[submodule "projects/SourceHop/GodotScenes"]
-	path = projects/SourceHop/GodotScenes
+[submodule "Projects/SourceHop/GodotScenes"]
+	path = Projects/SourceHop/GodotScenes
 	url = git@github.com:TrafkHop-Entertainment/SourceHop-GodotScenes.git
-[submodule "projects/SourceHop/Code"]
-	path = projects/SourceHop/Code
+[submodule "Projects/SourceHop/Code"]
+	path = Projects/SourceHop/Code
 	url = git@github.com:TrafkHop-Entertainment/SourceHop-Code.git
-[submodule "projects/SourceHop/Models"]
-	path = projects/SourceHop/Models
+[submodule "Projects/SourceHop/Models"]
+	path = Projects/SourceHop/Models
 	url = git@github.com:TrafkHop-Entertainment/SourceHop-Models.git
-[submodule "projects/SourceHop/Images"]
-	path = projects/SourceHop/Images
+[submodule "Projects/SourceHop/Images"]
+	path = Projects/SourceHop/Images
 	url = git@github.com:TrafkHop-Entertainment/SourceHop-Images.git

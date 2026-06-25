@@ -31,9 +31,9 @@ jobs:
         run: |
           git config --global url."https://x-access-token:${GITHUB_TOKEN}@github.com/".insteadOf "git@github.com:"
 
-          git config submodule."projects/SourceHop/Code".update none
-          git config submodule."projects/SourceHop/Notes".update none
-          git config submodule."projects/SourceHop/GodotScenes".update none
+          git config submodule."Projects/SourceHop/Code".update none
+          git config submodule."Projects/SourceHop/Notes".update none
+          git config submodule."Projects/SourceHop/GodotScenes".update none
 
           git submodule update --init --recursive
 
