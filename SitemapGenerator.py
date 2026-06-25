@@ -27,7 +27,7 @@ SKIP_PATH_SUBSTRINGS = [
     "\\.git\\",
 ]
 
-output_files = ["sitemap.xml", "projects/AskAlfonz/AskAlfonz/sitemap.xml"]
+output_files = ["sitemap.xml", "Projects/AskAlfonz/AskAlfonz/sitemap.xml"]
 
 sitemap_lines = [
     '<?xml version="1.0" encoding="UTF-8"?>',
