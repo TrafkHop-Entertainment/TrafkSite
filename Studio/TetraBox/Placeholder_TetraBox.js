@@ -104,7 +104,7 @@ function _makeCanvas(className, w, h, isHover) {
     return { canvas, entry };
 }
 
-// Rückwärtskompatibilität: nav.js ruft makeBubbleVideo() auf.
+// Rückwärtskompatibilität: Nav.js ruft makeBubbleVideo() auf.
 // Liefert (wie injectNavVideos) ein Paar aus normal + hover Canvas in einem
 // Fragment, statt nur einem einzelnen Canvas - sonst gibt es bei dynamisch
 // erzeugten Bubbles (Sitemap-Baum) nie ein Hover-Bild zum Anzeigen.
@@ -167,12 +167,12 @@ function loadComponent(elementId, filePath, callback) {
     .catch(error => console.error('Fehler beim Laden von ' + filePath, error));
 }
 
-loadComponent('header-placeholder', 'Files/header.html', () => {
+loadComponent('header-placeholder', 'Files/Header.html', () => {
     if (typeof initNav === 'function') {
         initNav();
     }
 });
 
-loadComponent('footer-placeholder', 'Files/footer.html');
+loadComponent('footer-placeholder', 'Files/Footer.html');
 
 /*Made with AI*/

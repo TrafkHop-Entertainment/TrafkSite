@@ -81,7 +81,7 @@ h3 {
 
 /* ==========================================================================
    HINTERGRUND + PARALLAX
-   Ein fixes Hintergrund-Layer, das via JS (parallax.js) beim Scrollen
+   Ein fixes Hintergrund-Layer, das via JS (Parallax.js) beim Scrollen
    gedrosselt nach oben verschoben wird. Kein animation-timeline-Trick mehr,
    da der nicht zuverlässig mit position:fixed zusammenspielt.
    ========================================================================== */
@@ -92,7 +92,7 @@ h3 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("../Projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
+    background-image: url("Projects/SourceHop/Images/TrafkSite/13WorldsBG3.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
