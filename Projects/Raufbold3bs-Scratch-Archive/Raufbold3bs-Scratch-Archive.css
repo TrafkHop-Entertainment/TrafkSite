@@ -1,0 +1,17 @@
+#parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../Projects/SourceHop/Images/RSA/For Website/pyleyhunt/og.svg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 110vw;
+    pointer-events: none;
+    z-index: -1;
+    will-change: transform;
+}
+body {
+background-color: #006116;
+}

@@ -37,7 +37,7 @@ function initNav() {
                     if (!level[part]) {
                         level[part] = { name: display, path: null, children: {} };
                     }
-                    if (isLast) level[part].path = url;
+                    if (isLast) level[part].path = parts.join('/');
                     level = level[part].children;
                 });
             } catch(e) { console.warn(e); }

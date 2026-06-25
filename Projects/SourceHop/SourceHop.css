@@ -1,0 +1,26 @@
+#SourceHop {
+    align-items: center;
+}
+#SourceHop img {
+max-width: 65%;}
+
+#Parts {
+display: flex;
+flex-direction: column;
+position: relative;}
+
+#partlist {
+gap: 3rem;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+padding-left: 2rem;
+padding-right: 2rem;
+justify-content: space-evenly;
+}
+#partlist a {
+display: flex;
+max-width: 35%;
+}
+#partlist a img {
+max-width: 100%;}

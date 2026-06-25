@@ -1,105 +1,83 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../../../style.css">
-<meta name="description" content="The Home/Newspage of Trafkhop Entertainment">
-<title>Trafkhop Entertainment™</title>
-<audio id="rsalogosound" src="Raufbold3bs-Scratch-Archive/RSA%20Intro.mp3"></audio>
-<script src="../../../volume.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const logo = document.querySelector('#logoundnav img');
-    const introSound = document.getElementById('rsalogosound');
+  <head>
+    <base href="/TrafkSite/">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Files/Standard.css">
+    <link rel="stylesheet" href="Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive.css">
 
-    if (logo && introSound) {
+    <meta name="description" content="Raufbold3b's Scratch Archive (RSA) - a collection of 15 early games by HoppiTex, originally made in Scratch.">
+    <meta name="author" content="TrafkHop Entertainment">
+    <title>Raufbold3b's Scratch Archive</title>
 
-        logo.addEventListener('click', () => {
-            introSound.currentTime = 0;
-            introSound.play().catch(error => {
-                console.log("Wurde vom Browser blockiert. Klicke erst irgendwo auf die Seite.");
-            });
-        });
-    }
-});
-</script>
-</head>
+  </head>
+  <body>
+    <div id="parallax-bg"></div>
+    <div id="header-placeholder"></div><div id="nav-placeholder"></div>
+    <audio id="rsaintro" src="Projects/SourceHop/Audios/RSA/Intro/RSA%20Intro.mp3"></audio>
 
-<body>
+    <main>
 
-<header>
-<section id="logoundnav">
-<nav>
-<a class="header back-button do" href="javascript:history.back()">
-<span>Back</span>
-</a>
-</nav>
-<img src="Raufbold3bs-Scratch-Archive/RSA%20Logo.svg" alt="Raufbold3b's Scratch Archive" class="do">
-<nav>
-<a class="header do" href="../../../index.html">
-<span>Home</span>
-</a>
-</nav>
-</section>
-<div class="borderbottom"></div>
-</header>
+      <section id="Logo" class="nobubble">
+        <img onclick="PlayTrack('rsaintro')" class="img do" id="rsaLogo" src="Projects/SourceHop/Images/RSA/Logo/RSA%20Logo.svg" alt="Raufbold3b's Scratch Archive">
+        <p>RSA - Raufbold3b's Scratch Archive is a collection of 15 very old and bad games released by HoppiTex (back then Raufbold3b/Ullidani) on Scratch/Unreleased.</p>
+      </section>
 
-<main>
+      <section id="About" class="nobubble">
+        <h1><a class="do" href="https://itch.io/c/6715296/raufbold3bs-scratch-archive">Raufbold3b's Scratch Archive</a></h1>
+        <iframe src="https://www.youtube.com/embed/GEhIeeaXC-U" allow="autoplay; controls; picture-in-picture" allowfullscreen></iframe>
+      </section>
 
+      <section id="History" class="nobubble">
+        <h1>History</h1>
+        <p>At the time (~2018 - 2024) he did not know how to code and he was also a bit too young to really learn it properly. So he made the best out of Scratch and other modifications like Turbowarp, Penguinmod and Dinosaurmod. Most games were really bad, a few are decent but are really unfinished and bugged. In the glorious year 2025, HoppiTex made the decision to make a collection of his "best" works (that even he dislikes by now) and released it shortly after on Itch.io on 19.12.2025!</p>
+      </section>
 
-<div class="content">
-<div class="header">
-    <a class="do" href="https://itch.io/c/6715296/raufbold3bs-scratch-archive"><h2>Raufbold3b's Scratch Archive</h2></a>
-</div>
-<p>RSA - Raufbold3b's Scratch Archive is a Collection of 15 very old and bad games released by HoppiTex(back then Raufbold3b/Ullidani) on Scratch/Unreleased.</p>
-<iframe src="https://www.youtube.com/embed/GEhIeeaXC-U" allow="autoplay; controls; picture-in-picture" allowfullscreen></iframe>
-</div>
-<div class="content">
-<div class="header">
-<h2>History</h2>
-</div>
-<p>At the time(~2018 - 2024) he did not know how to code and he was also a bit too joung to really learn it properly. So he made the best out of Scratch and other modifications like Turbowarp, Penguinmod und Dinosourmod. Most games were really bad, a few are decent but are really unfinished and bugged. In the glorious year 2025, HoppiTex made the decision to make a Collection of his "best" works(that even he disliked by now) and released that shortly after in Itch.io on 19.12.2025!</p>
-</div>
+      <section id="GamesIncluded" class="nobubble">
+        <h1>Games Included</h1>
+        <ul>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/autov2/autov2.html">Auto v2</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/derapfelundderkuerbis/derapfelundderkuerbis.html">Der Apfel und der Kürbis</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/die2cops/die2cops.html">Die 2 Cops</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/goffy/goffy.html">Die Abenteuer von Ritter Goffy und seinem schlauen Kollegen Blufi 5: The Game</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/flappypyley/flappypyley.html">Flappy Pyley</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/grasiv143/grasiv143.html">grasi 1.4.3 (Costume Overhaul 1, Basic Jumping, No Hole)</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/grasiv064/grasiv064.html">Gras-Zupf Simulator (Early Access) v0.64</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/mayrorpg/mayrorpg.html">Mayro RPG</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/pyleyfang/pyleyfang.html">Pyley Fang</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/pyleyjump/pyleyjump.html">Pyley Jump</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/pyleyrun/pyleyrun.html">Pyley Run 1.0</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/pyleysadventure/pyleysadventure.html">Pyley's Adventures</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/pyleyhunt/pyleyhunt.html">Pyley's Hunt</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/retroklavier/retroklavier.html">Retro Klavier</a></li>
+          <li><a class="do" href="Projects/Raufbold3bs-Scratch-Archive/RSA_Sites/sonnenpflicht/sonnenpflicht.html">Sonnenpflicht</a></li>
+        </ul>
+      </section>
 
-<div class="content">
-<div class="header">
-<h2>Games Included</h2>
-</div>
-<div class="wiki-content-header">
-    <a class="do" href="pyleyjump/pyleyjump.html"><h2>Pyley Jump</h2></a>
-</div>
-<img>
-<p></p>
-<img>
-</div>
+      <section id="CollectionLinks" class="nobubble">
+        <h1>Collection Links</h1>
+        <ul>
+          <li><a class="do" href="https://itch.io/c/6715296/raufbold3bs-scratch-archive">Itch.io Collection</a></li>
+          <li><a class="do" href="https://github.com/Trafkhop-Entertainment/Raufbold3bs-Scratch-Archive">Github Repo</a></li>
+          <li><a class="do" href="https://scratch.mit.edu/users/Raufbold3b/">Original Scratch Account</a></li>
+        </ul>
+      </section>
 
-<div class="content">
-    <div class="header">
-        <h2>Collection Links</h2>
-    </div>
-    <a class="do" href="https://itch.io/c/6715296/raufbold3bs-scratch-archive"><p>Itch.io Collection</p></a>
-    <a class="do" href="https://github.com/Trafkhop-Entertainment/Raufbold3bs-Scratch-Archive"><p>Github Repo</p></a>
-    <a class="do" href="https://penguinmod.com/profile/?user=trafkhop"><p>Our Penguinmod Profile</p></a>
-    <a class="do" href="https://scratch.mit.edu/users/Raufbold3b/"><p>Original Scratch Account</p></a>
-</div>
+    </main>
 
+    <div id="footer-placeholder"></div>
 
-<iframe src="../../../fragAlfonz/fragAlfonz.html" width="100%" height="100%" id="chatbotIframe"></iframe>
-</main>
-
-<footer>
-<a class="do" href="mailto:contact.trafkhop@proton.me">Contact via Email</a>
-<a class="do" href="../../../license/LICENSE.html">License</a>
-<span>© 2026 Trafkhop Entertainment™. All rights reserved.</span>
-<div class="lautstärke">
-    <label for="lautstärke">Volume:</label>
-    <input class="do" type="range" id="lautstärke" min="0" max="1" step="0.01" value="0.5">
-</div>
-</footer>
-
-
-</body>
+  <script src="Files/Placeholder.js"></script>
+  <script src="Files/Nav.js"></script>
+  <script src="Files/Volume.js"></script>
+  <script src="Projects/Raufbold3bs-Scratch-Archive/Parallax.js"></script>
+  <script>
+      function PlayTrack(elementId) {
+      const audio = document.getElementById(elementId);
+      audio.play();}
+    </script>
+  </body>
 
 </html>
