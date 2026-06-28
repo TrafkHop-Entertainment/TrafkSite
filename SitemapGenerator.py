@@ -6,27 +6,6 @@ base_urls = [
 ]
 directory = "."
 
-allowed_extensions = (
-    ".html", ".md", ".txt",
-    ".css", ".js", ".ts",
-    ".c", ".cpp", ".h", ".hpp",
-    ".py", ".xml", ".sh", ".json",
-    ".yaml", ".yml", ".cmake", ".toml",
-)
-
-SKIP_FOLDERS = {
-    ".git",
-    # RSA games folder — too large, full game files
-    "games",  # only within RSA path, enforced below
-}
-
-# Path substrings that always get skipped regardless of depth
-SKIP_PATH_SUBSTRINGS = [
-    "raufbold3bs-scratch-archive/raufbold3bs-scratch-archive/games/",
-    "/.git/",
-    "\\.git\\",
-]
-
 output_files = ["sitemap.xml"]
 
 sitemap_lines = [
@@ -37,14 +16,6 @@ sitemap_lines = [
 today = datetime.now().strftime("%Y-%m-%d")
 
 print(f"Generating Sitemap for {len(base_urls)} base URLs:")
-
-def should_skip_path(path_str):
-    normalized = path_str.replace("\\", "/").lower()
-    if "/.git/" in normalized or normalized.startswith(".git/"):
-        return True
-    if "raufbold3bs-scratch-archive/raufbold3bs-scratch-archive/games/" in normalized:
-        return True
-    return False
 
 def get_priority(url_path):
 
@@ -72,16 +43,12 @@ for root, dirs, files in os.walk(directory):
         rel_path = os.path.relpath(os.path.join(root, filename), directory)
         url_path = rel_path.replace("\\", "/")
 
-        if should_skip_path(url_path):
-            continue
-
         if url_path in [p.replace("\\", "/") for p in output_files]:
             continue
 
         name, ext = os.path.splitext(filename)
 
-        if ext.lower() in allowed_extensions or ext == "":
-            found_files.append(url_path)
+        found_files.append(url_path)
 
 for base in base_urls:
     if not base.endswith("/"):
