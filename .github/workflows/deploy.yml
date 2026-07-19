@@ -34,6 +34,7 @@ jobs:
           git config submodule."Projects/SourceHop/Code".update none
           git config submodule."Projects/SourceHop/Notes".update none
           git config submodule."Projects/SourceHop/GodotScenes".update none
+          git config submodule."Projects/TrafkTux/TrafkTux".update none
 
           git submodule update --init --recursive
 
