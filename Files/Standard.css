@@ -3,11 +3,16 @@
    ========================================================================== */
 
 :root {
-    --Kraft:        #fff495;
-    --Kraftlight:   #f6f3d5;
-    --Kraft-dark:   #ede59f;
-    --Trafk:        #5a3998;
-    --Trafk-dark:   #23163B;
+    --Kraft:        #fff495; /*Main Attraction*/
+    --Kraftlight:   #f6f3d5; /*Dark Text*/
+    --Kraft-lightest: #fffdf5; /*Light Background*/
+    --Kraft-dark:   #ede59f; /*If other Kraft are too bright use this*/
+    --Trafk-lightest: #9C81CF; /*very important things only*/
+    --Trafk-ligher: #7554B3; /*Trennlinien und so spacer*/
+    --Trafk:        #5a3998; /*Main Attraction*/
+    --Trafk-darkish: #38255B; /*Side Attraction*/ /*Menu parts*/
+    --Trafk-dark:   #23163B; /*Dark Background*/ /*Ideal for text*/
+    --Trafk-darkest: #1A0D34; /*Light Text*/
 }
 
 
@@ -113,7 +118,7 @@ main {
     justify-content: flex-start;
     align-items: center;
     flex: 1 0 auto;
-    padding: 15rem;
+    padding: 3rem;
     padding-top: calc(3.5rem + 5rem); /* gleicht die Hoehe des fixen Headers aus */
     background-color: transparent;
 }
