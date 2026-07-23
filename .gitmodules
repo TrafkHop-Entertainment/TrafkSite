@@ -34,3 +34,6 @@
 [submodule "Projects/SourceHop/Images"]
 	path = Projects/SourceHop/Images
 	url = git@github.com:TrafkHop-Entertainment/SourceHop-Images.git
+[submodule "Studio/Members/DanielRaberger/HoppiTex"]
+	path = Studio/Members/DanielRaberger/HoppiTex
+	url = git@github.com:HoppiTex/HoppiTex.git
