@@ -1,0 +1,163 @@
+:root {
+    --Kraft:        #fff495; /*Main Attraction*/
+    --Kraftlight:   #f6f3d5; /*Dark Text*/
+    --Kraft-lightest: #fffdf5; /*Light Background*/
+    --Kraft-dark:   #ede59f; /*If other Kraft are too bright use this*/
+    --Kraft-darker: #C7C07F;
+    --Trafk-lightest: #9C81CF; /*very important things only*/
+    --Trafk-ligher: #7554B3; /*Trennlinien und so spacer*/
+    --Trafk:        #5a3998; /*Main Attraction*/
+    --Trafk-darkish: #38255B; /*Side Attraction*/ /*Menu parts*/
+    --Trafk-dark:   #23163B; /*Dark Background*/ /*Ideal for text*/
+    --Trafk-darkest: #1A0D34; /*Light Text*/
+}
+
+/*5, 15, 18, 23, 28, 35, 45, 65, 85, 95, 105, ...*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Noto Sans", sans-serif;
+}
+
+body {
+    background-color: #1A0D34;
+}
+
+
+#Logo {
+    padding: 1.65rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+nav {
+    background-color: var(--Kraft);
+    box-shadow: 0 0 5px 5px var(--Kraft);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 4rem;
+    padding-top: 0.2rem;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    border-bottom-right-radius: 2.65rem;
+    border-bottom-left-radius: 2.65rem;
+}
+main {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    min-height: 100vh;
+    background-image: url("/TrafkSite/Projects/SourceHop/Images/Projects/TrafkTux/vignette.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.TrafkBubble2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/TrafkSite/Projects/SourceHop/Images/Projects/TrafkSite/TrafkBubble2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 85% 100%;
+    width: 100%;
+    height: 100%;
+    min-width: 3.5rem;
+    min-height: 3.5rem;
+    grid-area: 1/1;
+    transition: background-image 0.065s ease-in-out;
+}
+
+a.TrafkBubble:hover .TrafkBubble2 {
+    background-image: url("/TrafkSite/Projects/SourceHop/Images/Projects/TrafkSite/TrafkBubbleGlow2.png");
+}
+.TrafkBubble1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/TrafkSite/Projects/SourceHop/Images/Projects/TrafkSite/TrafkBubble.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 85% 100%;
+    width: 100%;
+    height: 100%;
+    min-width: 3.5rem;
+    min-height: 3.5rem;
+    grid-area: 1/1;
+    transition: background-image 0.065s ease-in-out;
+}
+a.TrafkBubble:hover .TrafkBubble1 {
+    background-image: url("/TrafkSite/Projects/SourceHop/Images/Projects/TrafkSite/TrafkBubbleGlow1.png");
+}
+a.TrafkBubble {
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+}
+a.TrafkBubble p {
+    display: flex;
+    color: var(--Kraft);
+    text-align: center;
+    filter: drop-shadow(0px 0px 3px var(--Kraft));
+    grid-area: 1/1;
+    transition: filter 0.065s ease-in-out;
+    padding: 0 1.5rem;
+}
+a.TrafkBubble:hover p {
+    filter: drop-shadow(0px 0px 8px var(--Kraft)) drop-shadow(0px 0px 6px var(--Kraft)) drop-shadow(0px 0px 3px var(--Kraft));
+}
+
+
+.BannerText {
+    display: flex;
+    color: lawngreen;
+    font-size: 1.85rem;
+    font-style: italic;
+    margin-bottom: 0rem;
+    filter: drop-shadow(1px 2px 3px var(--Kraft-dark));
+}
+
+img {
+    max-width: 85%;
+    display:  flex;
+    padding: 1.5rem;
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 4rem;
+    padding: 0.65rem;
+    background-color: var(--Kraft);
+    box-shadow: 0 0 5px 5px var(--Kraft);
+    position: absolute;
+    bottom: 0;
+    border-top-right-radius: 2.65rem;
+    border-top-left-radius: 2.65rem;
+    text-align: center;
+}
+
+#CopyRight {
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 1.15rem;
+    color: var(--Trafk-dark);
+}
+#LogoImg {
+    max-width: 585px;
+}
