@@ -53,6 +53,8 @@ jobs:
           rm -rf "Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive/HTML-Games"
           rm -rf "Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive/Source-Code"
 
+          sync
+
       - uses: actions/configure-pages@v6
 
       - uses: actions/upload-pages-artifact@v4
