@@ -40,12 +40,20 @@ jobs:
 
       - name: Clean repo for GitHub Pages
         run: |
-          rm -rf .git
+          rm -rf .git .github .idea .obsidian
           find . -name ".git" -type f -delete
           find . -name ".git" -type d -exec rm -rf {} + 2>/dev/null || true
-          rm -rf .idea .obsidian .github
           find . -name ".idea" -type d -exec rm -rf {} + 2>/dev/null || true
           find . -name ".obsidian" -type d -exec rm -rf {} + 2>/dev/null || true
+
+          find . -name "*.sf2" -type f -delete
+
+          rm -rf "Projects/SourceHop/Models"
+          rm -rf "Projects/SourceHop/GodotScenes"
+          rm -rf "Projects/SourceHop/Audios/LMMS"
+          rm -rf "Projects/TrafkCalc"
+          rm -rf "Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive/HTML-Games"
+          rm -rf "Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive/Source-Code"
 
       - uses: actions/configure-pages@v6
 
