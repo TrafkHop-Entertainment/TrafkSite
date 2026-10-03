@@ -1,8 +1,5 @@
 name: Deploy to GitHub Pages
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 on:
   push:
     branches: [main]
@@ -40,6 +37,15 @@ jobs:
           git config submodule."Projects/TrafkTux/TrafkTux".update none
 
           git submodule update --init --recursive
+
+      - name: Clean repo for GitHub Pages
+        run: |
+          rm -rf .git
+          find . -name ".git" -type f -delete
+          find . -name ".git" -type d -exec rm -rf {} + 2>/dev/null || true
+          rm -rf .idea .obsidian .github
+          find . -name ".idea" -type d -exec rm -rf {} + 2>/dev/null || true
+          find . -name ".obsidian" -type d -exec rm -rf {} + 2>/dev/null || true
 
       - uses: actions/configure-pages@v6
 
