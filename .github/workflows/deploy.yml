@@ -44,7 +44,7 @@ jobs:
           find . -name ".idea" -type d -exec rm -rf {} + 2>/dev/null || true
           find . -name ".obsidian" -type d -exec rm -rf {} + 2>/dev/null || true
 
-          find . -name "*.sf2" -type f -delete
+          find . -name "*.sf2" -type f -exec truncate -s 0 {} +
 
           rm -rf "Projects/SourceHop/Models"
           rm -rf "Projects/SourceHop/GodotScenes"
