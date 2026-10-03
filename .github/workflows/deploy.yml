@@ -40,9 +40,7 @@ jobs:
 
       - name: Clean repo for GitHub Pages
         run: |
-          rm -rf .git .github .idea .obsidian
-          find . -name ".git" -type f -delete
-          find . -name ".git" -type d -exec rm -rf {} + 2>/dev/null || true
+          rm -rf .idea .obsidian
           find . -name ".idea" -type d -exec rm -rf {} + 2>/dev/null || true
           find . -name ".obsidian" -type d -exec rm -rf {} + 2>/dev/null || true
 
