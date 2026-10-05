@@ -37,3 +37,6 @@
 [submodule "Studio/Members/DanielRaberger/HoppiTex"]
 	path = Studio/Members/DanielRaberger/HoppiTex
 	url = git@github.com:HoppiTex/HoppiTex.git
+[submodule "Projects/TrafkVerseScreensaver/TrafkVerseScreensaver"]
+	path = Projects/TrafkVerseScreensaver/TrafkVerseScreensaver
+	url = git@github.com:TrafkHop-Entertainment/TrafkVerseScreensaver.git
