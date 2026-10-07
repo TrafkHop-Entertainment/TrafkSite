@@ -51,7 +51,7 @@ jobs:
           rm -rf "Projects/SourceHop/Audios/LMMS"
           rm -rf "Projects/TrafkCalc"
           rm -rf "Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive/Games"
-          rm -rf "Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive/SourceCode/"
+          find . -type l -delete
 
           sync
 
