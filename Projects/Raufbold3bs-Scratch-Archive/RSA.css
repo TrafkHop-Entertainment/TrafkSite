@@ -1,9 +1,11 @@
 #Games {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 #Games a img {
-    max-width: 50%;
+    max-width: 28vw;
+}
+#LogoImg {
 }
