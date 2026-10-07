@@ -50,8 +50,8 @@ jobs:
           rm -rf "Projects/SourceHop/GodotScenes"
           rm -rf "Projects/SourceHop/Audios/LMMS"
           rm -rf "Projects/TrafkCalc"
-          rm -rf "Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive/HTML-Games"
-          rm -rf "Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive/Source-Code"
+          rm -rf "Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive/Games"
+          rm -rf "Projects/Raufbold3bs-Scratch-Archive/Raufbold3bs-Scratch-Archive/SourceCode/"
 
           sync
 
