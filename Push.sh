@@ -1,4 +1,23 @@
 #!/bin/bash
+#
+# Push.sh - committet und pusht (inkl. Submodule). Jeder erzeugte Commit wird
+# EXPLIZIT mit SIGNING_KEY signiert (git commit -S), unabhaengig von der
+# globalen "commit.gpgsign"-Einstellung. Vor dem Push wird jeder frisch
+# erzeugte Commit nochmal mit "git log --show-signature" geprueft - SystemUpdate.sh
+# auf den Zielsystemen akzeptiert nur Commits, die mit diesem Schluessel
+# signiert sind (siehe LICENSE / SystemUpdate.sh: SIGNING_FPR).
+set -uo pipefail
+
+# Voller Fingerabdruck, keine Kurz-ID (git nimmt bei -S auch Kurz-IDs, aber
+# die sind leichter zu faelschen). Siehe LICENSE fuer den vollen Abdruck.
+SIGNING_KEY="35A14104CDF11BA0565681206979BC4D23F60269"
+
+if ! gpg --batch --list-secret-keys "$SIGNING_KEY" >/dev/null 2>&1; then
+    echo "FEHLER: Privater Schluessel $SIGNING_KEY ist hier nicht vorhanden/entsperrbar." >&2
+    echo "        Ohne ihn signierte SystemUpdate.sh-Commits wuerden auf den" >&2
+    echo "        Zielsystemen abgelehnt. Abbruch, es wird NICHTS committet." >&2
+    exit 1
+fi
 
 if [ $# -ge 1 ]; then
   commit_msg="$1"
@@ -22,7 +41,15 @@ commit_and_push() {
   git add -A
 
   if ! git diff-index --quiet HEAD 2>/dev/null; then
-    git commit -m "$commit_msg"
+    if ! git commit -S"$SIGNING_KEY" -m "$commit_msg"; then
+      echo "FEHLER: Signierter Commit in $dir fehlgeschlagen." >&2
+      return 1
+    fi
+  fi
+
+  if ! git log --show-signature -1 2>&1 | grep -q "Good signature from"; then
+    echo "FEHLER: Letzter Commit in $dir ist NICHT gueltig signiert, wird NICHT gepusht." >&2
+    return 1
   fi
 
   git push origin HEAD 2>/dev/null || true
@@ -50,11 +77,18 @@ cd "$ROOT_DIR"
 git add -A
 
 if ! git diff-index --quiet HEAD 2>/dev/null; then
-  git commit -m "$commit_msg"
+  if ! git commit -S"$SIGNING_KEY" -m "$commit_msg"; then
+    echo "FEHLER: Signierter Commit im Hauptrepo fehlgeschlagen. Kein Push." >&2
+    exit 1
+  fi
+fi
+
+if ! git log --show-signature -1 2>&1 | grep -q "Good signature from"; then
+  echo "FEHLER: Letzter Commit im Hauptrepo ist NICHT gueltig signiert. Kein Push." >&2
+  exit 1
 fi
 
 git push --recurse-submodules=on-demand
 
 echo ""
 echo "Upload complete (⌐■_■)"
-
