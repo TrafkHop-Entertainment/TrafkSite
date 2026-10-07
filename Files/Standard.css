@@ -21,7 +21,7 @@
     text-decoration: none;
     font-family: "Noto Sans", sans-serif;
 }
-p, span {
+p, span, h1, h2, h3, h4, h5, h6 {
     color: var(--Kraft-lightest);
 }
 body {
