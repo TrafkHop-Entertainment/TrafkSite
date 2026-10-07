@@ -32,6 +32,21 @@ fi
 
 export commit_msg
 
+# Locale-unabhaengig (KEIN grep auf die GPG-Textausgabe, die ist auf diesem
+# System auf Deutsch, "Good signature from" kaeme also nie vor, selbst bei
+# einer tatsaechlich gueltigen Signatur). %G? ist der maschinenlesbare
+# Pruefcode von git selbst: G = gueltig (bekanntes Vertrauen), U = gueltig,
+# aber Schluessel nicht explizit als vertrauenswuerdig markiert - beides
+# akzeptieren wir, zusaetzlich muss der Signierschluessel (%GF) exakt der
+# erwartete sein.
+verify_last_commit_signed() {
+  local status fpr
+  status="$(git log -1 --format='%G?' 2>/dev/null)"
+  fpr="$(git log -1 --format='%GF' 2>/dev/null)"
+  [[ "$status" == "G" || "$status" == "U" ]] && [[ "$fpr" == "$SIGNING_KEY" ]]
+}
+export -f verify_last_commit_signed
+
 commit_and_push() {
   local dir="$1"
   cd "$dir" || return 1
@@ -47,8 +62,8 @@ commit_and_push() {
     fi
   fi
 
-  if ! git log --show-signature -1 2>&1 | grep -q "Good signature from"; then
-    echo "FEHLER: Letzter Commit in $dir ist NICHT gueltig signiert, wird NICHT gepusht." >&2
+  if ! verify_last_commit_signed; then
+    echo "FEHLER: Letzter Commit in $dir ist NICHT gueltig mit dem erwarteten Schluessel signiert, wird NICHT gepusht." >&2
     return 1
   fi
 
@@ -83,8 +98,8 @@ if ! git diff-index --quiet HEAD 2>/dev/null; then
   fi
 fi
 
-if ! git log --show-signature -1 2>&1 | grep -q "Good signature from"; then
-  echo "FEHLER: Letzter Commit im Hauptrepo ist NICHT gueltig signiert. Kein Push." >&2
+if ! verify_last_commit_signed; then
+  echo "FEHLER: Letzter Commit im Hauptrepo ist NICHT gueltig mit dem erwarteten Schluessel signiert. Kein Push." >&2
   exit 1
 fi
 
