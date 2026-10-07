@@ -1,0 +1,9 @@
+#Games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#Games a img {
+    max-width: 50%;
+}
