@@ -60,6 +60,7 @@ nav {
     scrollbar-width: thin;
     border-bottom-right-radius: 2.65rem;
     border-bottom-left-radius: 2.65rem;
+    z-index: 4096;
 }
 main {
     padding-top: 5rem;
