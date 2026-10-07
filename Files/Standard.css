@@ -42,7 +42,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     min-height: 4rem;
