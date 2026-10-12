@@ -25,12 +25,12 @@
 [submodule "Projects/TrafkCalc"]
 	path = Projects/TrafkCalc
 	url = git@github.com:TrafkHop-Entertainment/TrafkCalc.git
-[submodule "Projects/TrafkVerseScreensaver"]
-	path = Projects/TrafkVerseScreensaver
-	url = git@github.com:TrafkHop-Entertainment/TrafkVerseScreensaver.git
 [submodule "Studio/Members/HoppiTex"]
 	path = Studio/Members/HoppiTex
 	url = git@github.com:HoppiTex/HoppiTex.git
 [submodule "Projects/Raufbold3bs-Scratch-Archive"]
 	path = Projects/Raufbold3bs-Scratch-Archive
 	url = git@github.com:TrafkHop-Entertainment/Raufbold3bs-Scratch-Archive.git
+[submodule "Projects/TrafkVerseWallpaper"]
+	path = Projects/TrafkVerseWallpaper
+	url = git@github.com:TrafkHop-Entertainment/TrafkVerseWallpaper.git
