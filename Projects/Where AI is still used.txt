@@ -1,9 +1,0 @@
-# AI USED:
-* TrafkSite (excluding html+css)
-* AskAlfonz
-* TrafkTux
-
-# No AI used:
-* RSA
-* TrafkCalc
-* SourceHop

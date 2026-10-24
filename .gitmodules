@@ -34,3 +34,6 @@
 [submodule "Projects/TrafkVerseWallpaper"]
 	path = Projects/TrafkVerseWallpaper
 	url = git@github.com:TrafkHop-Entertainment/TrafkVerseWallpaper.git
+[submodule "Projects/Contributions/Libre-KAS"]
+	path = Projects/Contributions/Libre-KAS
+	url = git@github.com:JaJa-Creations/Libre-KAS.git

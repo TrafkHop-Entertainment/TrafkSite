@@ -72,12 +72,28 @@ commit_and_push() {
 
 export -f commit_and_push
 
-mapfile -t submodule_paths < <(
+mapfile -t all_submodule_paths < <(
   git submodule foreach --recursive --quiet 'echo "$displaypath"' 2>/dev/null \
   | awk '{ print NR, $0 }' \
   | sort -rn \
   | awk '{ print $2 }'
 )
+
+# Submodule unter Projects/Contributions/ werden NICHT automatisch committet
+# oder gepusht: das sind fremde Repos, zu denen wir per Pull Request
+# beitragen. Dort soll nichts automatisch auf main landen oder signiert
+# gepusht werden - das macht man dort bewusst von Hand (Branch, Commit, PR).
+submodule_paths=()
+for rel_path in "${all_submodule_paths[@]}"; do
+  case "$rel_path" in
+    Projects/Contributions/*)
+      echo "→ Submodul: $rel_path (Contribution, uebersprungen)"
+      ;;
+    *)
+      submodule_paths+=("$rel_path")
+      ;;
+  esac
+done
 
 ROOT_DIR="$(pwd)"
 
