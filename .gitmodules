@@ -37,3 +37,6 @@
 [submodule "Projects/Contributions/Libre-KAS"]
 	path = Projects/Contributions/Libre-KAS
 	url = git@github.com:JaJa-Creations/Libre-KAS.git
+[submodule "Studio/GithubRepo"]
+	path = Studio/GithubRepo
+	url = git@github.com:TrafkHop-Entertainment/.github.git
