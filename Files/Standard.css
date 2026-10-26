@@ -21,7 +21,7 @@
     text-decoration: none;
     font-family: "Noto Sans", sans-serif;
 }
-p, span, h1, h2, h3, h4, h5, h6 {
+p, span, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd {
     color: var(--Kraft-lightest);
 }
 h1 {
@@ -64,7 +64,15 @@ body {
     background-color: #23163B;
 }
 
-
+ul, ol {
+    padding-left: 2rem;
+}
+li {
+    margin-left: 1rem;
+    list-style: circle;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+}
 .Logo {
     padding: 1.65rem;
     display: flex;
@@ -221,4 +229,12 @@ footer {
 .Tag {
     margin-top: -0.5rem;
     font-style: italic;
+}
+
+
+
+@media (max-width: 850px) {
+    .Images a img, .Images img {
+        max-width: 100%;
+    }
 }

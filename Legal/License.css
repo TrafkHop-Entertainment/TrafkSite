@@ -12,4 +12,7 @@
 
 section p {
     line-height: 1.6;
-}
+}#Intro p {
+     color: orange;
+     font-size: 90%;
+ }
