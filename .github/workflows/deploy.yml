@@ -36,6 +36,19 @@ jobs:
           git config submodule."Projects/SourceHop/GodotScenes".update none
           git config submodule."Projects/TrafkTux/TrafkTux".update none
 
+          # NEU: alle Submodules unter Projects/Contributions/ überspringen
+          git config --file .gitmodules --get-regexp '^submodule\..*\.path$' \
+            | while read -r key path; do
+                case "$path" in
+                  Projects/Contributions/*)
+                    name="${key#submodule.}"
+                    name="${name%.path}"
+                    echo "Skipping submodule: $path"
+                    git config "submodule.${name}.update" none
+                    ;;
+                esac
+              done
+
           git submodule update --init --recursive
 
       - name: Clean repo for GitHub Pages
