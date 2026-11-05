@@ -43,3 +43,9 @@
 [submodule "Projects/UrlstoneDiskArchiver"]
 	path = Projects/UrlstoneDiskArchiver
 	url = git@github.com:TrafkHop-Entertainment/UrlstoneDiskArchiver.git
+[submodule "Projects/Glossarchi-History"]
+	path = Projects/Glossarchi-History
+	url = git@github.com:TrafkHop-Entertainment/Glossarchi-History.git
+[submodule "Projects/SourceHop/Videos"]
+	path = Projects/SourceHop/Videos
+	url = git@github.com:TrafkHop-Entertainment/SourceHop-Videos.git
