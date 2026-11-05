@@ -40,3 +40,6 @@
 [submodule "Studio/GithubRepo"]
 	path = Studio/GithubRepo
 	url = git@github.com:TrafkHop-Entertainment/.github.git
+[submodule "Projects/UrlstoneDiskArchiver"]
+	path = Projects/UrlstoneDiskArchiver
+	url = git@github.com:TrafkHop-Entertainment/UrlstoneDiskArchiver.git
