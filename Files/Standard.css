@@ -177,6 +177,10 @@ a.TrafkBubble:hover p {
     filter: drop-shadow(1px 2px 3px var(--Kraft-dark));
 }
 
+.Header {
+    border-bottom: 5px solid var(--Kraft);
+}
+
 img {
     max-width: 85vw;
     width: 100vw;
